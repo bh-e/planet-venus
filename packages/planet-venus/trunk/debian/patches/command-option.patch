@@ -1,0 +1,115 @@
+diff -Nur venus/planet.py venus.new/planet.py
+--- venus/planet.py	2008-02-16 00:07:19.000000000 +0000
++++ venus.new/planet.py	2008-02-16 00:10:45.000000000 +0000
+@@ -13,8 +13,11 @@
+                 "Jeff Waugh <jdub@perkypants.org>" ]
+ __license__ = "Python"
+ 
++import os, shutil, sys
++from os import path
+ 
+-import os, sys
++DEFAULT_CONFIGURATION_FILE_NAME = "/usr/share/planet-venus/example/default.ini"
++DEFAULT_THEME_DIRECTORY_NAME = "/usr/share/planet-venus/theme/default"
+ 
+ if __name__ == "__main__":
+     config_file = "config.ini"
+@@ -23,17 +26,69 @@
+     only_if_new = 0
+     expunge = 0
+ 
+-    for arg in sys.argv[1:]:
++    def display_error(message):
++        print >> sys.stderr, message
++        print >> sys.stderr
++        print >> sys.stderr, "Try `planet -h' for more information."
++        sys.exit(1)
++
++    for key, arg in enumerate(sys.argv[1:]):
+         if arg == "-h" or arg == "--help":
+-            print "Usage: planet [options] [CONFIGFILE]"
+-            print
+-            print "Options:"
+-            print " -v, --verbose       DEBUG level logging during update"
+-            print " -o, --offline       Update the Planet from the cache only"
+-            print " -h, --help          Display this help message and exit"
+-            print " -n, --only-if-new   Only spider new feeds"
+-            print " -x, --expunge       Expunge old entries from cache"
+-            print
++            print """Usage: planet [OPTION] [CONFIGURATION-FILE]
++
++Planet Venus downloads news feeds published by web sites and aggregates their
++content together into a single combined feed, latest news first.
++
++The exit status is 0 for success or 1 for failure.
++
++Options:
++
++ -h, --help              display a short help message and exit
++ -V, --version           display version information and exit
++ -c, --create DIRECTORY  create a new planet in DIRECTORY
++ -v, --verbose           verbose logging during update
++ -o, --offline           update from the cache only
++ -n, --only-if-new       only spider new feeds
++ -x, --expunge           expunge old entries from cache
++
++Examples:
++
++You can create a default planet:
++
++  planet --create example
++
++You can build this default planet right away:
++
++  cd example && planet planet.ini
++
++You can test the results in your favourite browser:
++
++  sensible-browser output/index.html
++
++The configuration file has more details for customisation:
++
++  sensible-editor planet.ini
++
++Report bugs using the `reportbug' command."""
++            sys.exit(0)
++        elif arg == "-V" or arg == "--version":
++            print """planet - Planet Venus 20080213
++Copyright (C) 2007, 2008 Sam Ruby <rubys@intertwingly.net>
++
++Licenced under the Python Software Foundation License Version 2.
++
++Written by Sam Ruby <rubys@intertwingly.net>."""
++            sys.exit(0)
++        elif arg == "-c" or arg == "--create":
++            planet_directory_name = sys.argv[key + 2]
++            configuration_file_name = path.join(planet_directory_name, "planet.ini")
++            theme_directory_name = path.join(planet_directory_name, "theme")
++            if not path.exists(planet_directory_name):
++                os.makedirs(planet_directory_name)
++            if not path.exists(configuration_file_name):
++                shutil.copy(DEFAULT_CONFIGURATION_FILE_NAME, configuration_file_name)
++            if not path.exists(theme_directory_name):
++                shutil.copytree(DEFAULT_THEME_DIRECTORY_NAME, theme_directory_name)
+             sys.exit(0)
+         elif arg == "-v" or arg == "--verbose":
+             verbose = 1
+@@ -44,11 +99,16 @@
+         elif arg == "-x" or arg == "--expunge":
+             expunge = 1
+         elif arg.startswith("-"):
+-            print >>sys.stderr, "Unknown option:", arg
+-            sys.exit(1)
++            display_error("Unknown option: %s" % arg)
+         else:
+             config_file = arg
+ 
++    if not config_file:
++        display_error("No configuration file specified.")
++
++    if not path.exists(config_file):
++        display_error("The configuration file does not exist: %s" % config_file)
++
+     from planet import config
+     config.load(config_file)
+ 

@@ -1,0 +1,19 @@
+diff -Nur venus/planet/shell/__init__.py venus.new/planet/shell/__init__.py
+--- venus/planet/shell/__init__.py	2008-02-14 01:08:50.000000000 +0000
++++ venus.new/planet/shell/__init__.py	2008-02-14 01:09:19.000000000 +0000
+@@ -42,12 +42,12 @@
+ 
+     # Try loading module for processing this template, based on the extension
+     base,ext = os.path.splitext(os.path.basename(template_resolved))
+-    module_name = ext[1:]
++    module_name = "planet.shell.%s" % ext[1:]
+     try:
+         try:
+-            module = __import__("_" + module_name)
++            module = __import__("_" + module_name, "", "", [""])
+         except:
+-            module = __import__(module_name)
++            module = __import__(module_name, "", "", [""])
+     except Exception, inst:
+         return log.error("Skipping %s '%s' after failing to load '%s': %s", 
+             mode, template_resolved, module_name, inst)
