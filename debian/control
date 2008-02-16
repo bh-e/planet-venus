@@ -1,0 +1,24 @@
+Source: planet-venus
+Section: python
+Priority: optional
+Maintainer: Noah Slater <nslater@bytesexual.org>
+Uploaders: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
+Standards-Version: 3.7.3
+Build-Depends: cdbs (>= 0.4.42), debhelper (>= 5.0.37.2)
+Build-Depends-Indep: python-support (>= 0.6.4), python, sharutils
+Homepage: http://www.intertwingly.net/code/venus/
+Vcs-Svn: svn://svn.debian.org/python-apps/packages/venus/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/python-apps/packages/venus/trunk/?op=log
+
+Package: planet-venus
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}, python-html5lib, python-htmltmpl,
+ python-httplib2, python-librdf,
+Suggests: python-django, python-genshi, python-libxslt1
+Conflicts: planet
+Description: aggregate feed generator
+ Planet Venus downloads news feeds published by web sites and
+ aggregates their content together into a single combined feed, latest
+ news first.
+ .
+ Planet Venus is a refactoring of Planet, also available in Debian.
