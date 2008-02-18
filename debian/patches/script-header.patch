@@ -1,0 +1,18 @@
+diff -Nur planet-venus-20080213-1.orig/planet/csv_config.py planet-venus-20080213-1.orig.new/planet/csv_config.py
+--- planet-venus-20080213-1.orig/planet/csv_config.py	2007-12-22 03:24:01.000000000 +0000
++++ planet-venus-20080213-1.orig.new/planet/csv_config.py	2008-02-18 12:43:35.000000000 +0000
+@@ -1,3 +1,5 @@
++#!/usr/bin/env python
++
+ from ConfigParser import ConfigParser
+ import csv
+ 
+diff -Nur planet-venus-20080213-1.orig/planet/opml.py planet-venus-20080213-1.orig.new/planet/opml.py
+--- planet-venus-20080213-1.orig/planet/opml.py	2007-12-22 03:24:01.000000000 +0000
++++ planet-venus-20080213-1.orig.new/planet/opml.py	2008-02-18 12:43:35.000000000 +0000
+@@ -1,3 +1,5 @@
++#!/usr/bin/env python
++
+ from xml.sax import ContentHandler, make_parser, SAXParseException
+ from xml.sax.xmlreader import InputSource
+ from sgmllib import SGMLParser
