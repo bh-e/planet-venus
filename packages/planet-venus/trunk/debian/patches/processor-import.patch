@@ -1,6 +1,6 @@
-diff -Nur venus/planet/shell/__init__.py venus.new/planet/shell/__init__.py
---- venus/planet/shell/__init__.py	2008-02-14 01:08:50.000000000 +0000
-+++ venus.new/planet/shell/__init__.py	2008-02-14 01:09:19.000000000 +0000
+diff -Nur planet-venus-20080213-1.orig/planet/shell/__init__.py planet-venus-20080213-1.orig.new/planet/shell/__init__.py
+--- planet-venus-20080213-1.orig/planet/shell/__init__.py	2007-12-22 03:24:02.000000000 +0000
++++ planet-venus-20080213-1.orig.new/planet/shell/__init__.py	2008-02-18 12:42:16.000000000 +0000
 @@ -42,12 +42,12 @@
  
      # Try loading module for processing this template, based on the extension

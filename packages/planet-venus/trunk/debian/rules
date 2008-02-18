@@ -16,6 +16,11 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 
 DEB_COMPRESS_EXCLUDE = .png .svg
 
+PACKAGE_NAME = planet-venus
+PACKAGE_VERSION = 20080213-1
+PACKAGE_DIRECTORY=$(PACKAGE_NAME)-$(PACKAGE_VERSION).orig
+PACKAGE_FILENAME=$(PACKAGE_NAME)_$(PACKAGE_VERSION).orig.tar.gz
+
 clean::
 	rm -rf diveintomark_20080214
 	rm -rf diveintomark_20080214.tar.gz
@@ -31,25 +36,26 @@ common-install-prehook-impl::
 	chmod 755 debian/planet-venus/usr/share/planet-venus/example/filters/guess-language/trigram.py
 	cp -R filters debian/planet-venus/usr/share/planet-venus/filter
 	cp -R planet.py debian/planet-venus/usr/bin/planet
+	rm -f themes/diveintomark/LICENCE
 	cp -R themes debian/planet-venus/usr/share/planet-venus/theme
 	cp -R planet debian/planet-venus/usr/share/python-support/planet-venus
-	rm -r debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/htmltmpl.py
-	rm -r debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/html5lib
-	rm -r debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/httplib2
-	uudecode debian/theme/diveintomark_20080214.tar.gz.uu
-	tar -xvzf diveintomark_20080214.tar.gz
-	rm diveintomark_20080214/LICENCE
-	patch -p1 < debian/theme/diveintomark_20080214.patch
-	cp -R diveintomark_20080214 \
-	debian/planet-venus/usr/share/planet-venus/theme/diveintomark
-	cp -R debian/planet.ini \
-	debian/planet-venus/usr/share/planet-venus/example/debian.ini
-	cp debian/binary.lintian-overrides \
-        debian/planet-venus/usr/share/lintian/overrides/planet-venus
-	cp debian/linda-overrides \
-	debian/planet-venus/usr/share/linda/overrides/planet-venus
-	help2man --no-info --name="Planet Venus aggregate feed generator" \
-	./planet.py > planet.1
+	rm -fr debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/htmltmpl.py
+	rm -fr debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/html5lib
+	rm -fr debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/httplib2
+	cp -R debian/planet.ini debian/planet-venus/usr/share/planet-venus/example/debian.ini
+	cp debian/binary.lintian-overrides debian/planet-venus/usr/share/lintian/overrides/planet-venus
+	cp debian/linda-overrides debian/planet-venus/usr/share/linda/overrides/planet-venus
+	help2man -N -n "Planet Venus aggregate feed generator" ./planet.py > planet.1
 
 binary-install/planet-venus::
 	dh_pysupport -pplanet-venus -X example -X filter
+
+get-orig-source:
+	wget --progress=dot http://www.intertwingly.net/code/venus.tgz
+	tar -xzf venus.tgz
+	rm -f venus.tgz
+	mv venus $(PACKAGE_DIRECTORY)
+	tar -czf $(PACKAGE_FILENAME) $(PACKAGE_DIRECTORY)
+	rm -fr $(PACKAGE_DIRECTORY)
+
+.PHONY: get-orig-source

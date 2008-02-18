@@ -1,6 +1,6 @@
-diff -Nur venus/planet.py venus.new/planet.py
---- venus/planet.py	2008-02-16 00:07:19.000000000 +0000
-+++ venus.new/planet.py	2008-02-16 00:10:45.000000000 +0000
+diff -Nur planet-venus-20080213-1.orig/planet.py planet-venus-20080213-1.orig.new/planet.py
+--- planet-venus-20080213-1.orig/planet.py	2007-12-22 03:24:01.000000000 +0000
++++ planet-venus-20080213-1.orig.new/planet.py	2008-02-18 12:40:44.000000000 +0000
 @@ -13,8 +13,11 @@
                  "Jeff Waugh <jdub@perkypants.org>" ]
  __license__ = "Python"
