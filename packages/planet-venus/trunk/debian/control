@@ -5,15 +5,16 @@ Maintainer: Noah Slater <nslater@bytesexual.org>
 Uploaders: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
 Standards-Version: 3.7.3
 Build-Depends: cdbs (>= 0.4.42), debhelper (>= 5.0.37.2)
-Build-Depends-Indep: help2man, python-support (>= 0.6.4), python, sharutils
+Build-Depends-Indep: help2man, python-support (>= 0.6.4), python
 Homepage: http://www.intertwingly.net/code/venus/
 Vcs-Svn: svn://svn.debian.org/python-apps/packages/venus/trunk/
 Vcs-Browser: http://svn.debian.org/wsvn/python-apps/packages/venus/trunk/?op=log
 
 Package: planet-venus
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python-html5lib, python-htmltmpl,
- python-httplib2, python-librdf,
+Depends: ${python:Depends}, ${misc:Depends}, python-chardet, python-html5lib,
+ python-htmltmpl, python-httplib2, python-librdf, python-libxml2,
+ python-libxslt1, python-utidylib, python-xml
 Suggests: python-django, python-genshi, python-libxslt1
 Conflicts: planet
 Description: aggregate feed generator
