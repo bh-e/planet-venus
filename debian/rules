@@ -16,10 +16,12 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 
 DEB_COMPRESS_EXCLUDE = .png .svg
 
+REPOSITORY_URI = http://intertwingly.net/code/venus/
+
 PACKAGE_NAME = planet-venus
-PACKAGE_VERSION = 20080220
-PACKAGE_DIRECTORY=$(PACKAGE_NAME)-$(PACKAGE_VERSION).orig
-PACKAGE_FILENAME=$(PACKAGE_NAME)_$(PACKAGE_VERSION).orig.tar.gz
+PACKAGE_VERSION = 86
+PACKAGE_DIRECTORY=$(PACKAGE_NAME)-0~bzr$(PACKAGE_VERSION).orig
+PACKAGE_FILENAME=$(PACKAGE_NAME)_0~bzr$(PACKAGE_VERSION).orig.tar.gz
 
 clean::
 	rm -rf diveintomark_20080214
@@ -51,11 +53,6 @@ binary-install/planet-venus::
 	dh_pysupport -pplanet-venus -X example -X filter
 
 get-orig-source:
-	wget --progress=dot http://www.intertwingly.net/code/venus.tgz
-	tar -xzf venus.tgz
-	rm -f venus.tgz
-	mv venus $(PACKAGE_DIRECTORY)
-	tar -czf $(PACKAGE_FILENAME) $(PACKAGE_DIRECTORY)
-	rm -fr $(PACKAGE_DIRECTORY)
+	bzr export -r $(PACKAGE_VERSION) $(PACKAGE_FILENAME) $(REPOSITORY_URI)
 
 .PHONY: get-orig-source

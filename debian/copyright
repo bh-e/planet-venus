@@ -3,8 +3,7 @@ X-Debianized-By: Noah Slater <nslater@bytesexual.org>
 X-Debianized-Date: Wed, 13 Feb 2008 09:20:18 +0000
 X-Source-Downloaded-From: http://www.intertwingly.net/code/venus/
 X-Source-Get-Original: ./debian/rules get-orig-source
-X-Source-Size: 389120
-X-Source-MD5: 934d927eecfdb5a1a4a17798de3ed60f
+X-Source-Original-Depends: bzr
 X-Upstream-Author: Sam Ruby <rubys@intertwingly.net>
 
 Files: *
