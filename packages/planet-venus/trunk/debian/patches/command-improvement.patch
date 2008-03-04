@@ -1,6 +1,6 @@
-diff -Nur venus/planet.py venus.new/planet.py
---- venus/planet.py	2007-12-22 03:24:01.000000000 +0000
-+++ venus.new/planet.py	2008-02-20 14:27:29.000000000 +0000
+diff -Nur planet-venus-20080220.orig/planet.py planet-venus-20080220.orig.new/planet.py
+--- planet-venus-20080220.orig/planet.py	2007-12-22 03:24:01.000000000 +0000
++++ planet-venus-20080220.orig.new/planet.py	2008-03-04 16:16:04.000000000 +0000
 @@ -13,30 +13,89 @@
                  "Jeff Waugh <jdub@perkypants.org>" ]
  __license__ = "Python"
@@ -38,7 +38,7 @@ diff -Nur venus/planet.py venus.new/planet.py
 -            print " -n, --only-if-new   Only spider new feeds"
 -            print " -x, --expunge       Expunge old entries from cache"
 -            print
-+            print """Usage: planet [OPTION] [CONFIGURATION-FILE]
++            print """Usage: planet [OPTION]... CONFIGURATION-FILE
 +
 +Planet Venus downloads news feeds published by web sites and aggregates their
 +content together into a single combined feed, latest news first.
@@ -47,14 +47,14 @@ diff -Nur venus/planet.py venus.new/planet.py
 +
 +Options:
 +
-+ -h, --help              display a short help message and exit
-+ -V, --version           display version information and exit
-+ -c, --create DIRECTORY  create a new planet in DIRECTORY
-+ -v, --verbose           verbose logging during update
-+ -d, --debug             debug logging during update
-+ -o, --offline           update from the cache only
-+ -n, --only-if-new       only spider new feeds
-+ -x, --expunge           expunge old entries from cache
++  -h, --help              display a short help message and exit
++  -V, --version           display version information and exit
++  -v, --verbose           verbose logging during update
++  -d, --debug             debug logging during update
++  -o, --offline           update from the cache only
++  -n, --only-if-new       only spider new feeds
++  -x, --expunge           expunge old entries from cache
++  -c, --create DIRECTORY  create a new planet in DIRECTORY
 +
 +Examples:
 +
