@@ -168,7 +168,7 @@ License: MIT
 
 Files: debian/*
 Copyright: Copyright (C) 2008 Noah Slater <nslater@bytesexual.org>
-License: other
+License: GAP
  Copying and distribution of this package, with or without modification, are
  permitted in any medium without royalty provided the copyright notice and this
  notice are preserved.
