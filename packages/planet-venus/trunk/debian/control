@@ -14,7 +14,7 @@ Package: planet-venus
 Architecture: all
 Depends: ${python:Depends}, ${misc:Depends}, python-chardet, python-html5lib,
  python-htmltmpl, python-httplib2, python-librdf, python-libxml2,
- python-libxslt1 python-utidylib
+ python-libxslt1, python-utidylib
 Suggests: python-django, python-genshi,
 Conflicts: planet
 Description: aggregate feed generator
