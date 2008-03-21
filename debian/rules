@@ -34,7 +34,7 @@ common-install-prehook-impl::
 	DEBIAN_VERSION=$(shell dpkg-parsechangelog | grep Version | sed "s/\w*: //"); \
 	sed "s/@version@/$${DEBIAN_VERSION}/" planet.py > planet.sed.py
 	chmod 755 planet.sed.py
-	help2man -N -n "Planet Venus aggregate feed generator" ./planet.sed.py > planet.1
+	help2man -N -n "an aggregate feed generator" ./planet.sed.py > planet.1
 	cp -R docs debian/planet-venus/usr/share/doc/planet-venus/html
 	cp -R examples debian/planet-venus/usr/share/planet-venus/example
 	chmod 755 debian/planet-venus/usr/share/planet-venus/example/filters/guess-language/guess-language.py
