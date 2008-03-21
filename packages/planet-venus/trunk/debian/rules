@@ -19,7 +19,7 @@ DEB_COMPRESS_EXCLUDE = .png .svg
 REPOSITORY_URI = http://intertwingly.net/code/venus/
 
 PACKAGE_NAME = planet-venus
-PACKAGE_VERSION = $(shell dpkg-parsechangelog | sed -rne 's,^Version: .*~bzr([^-]+).*,\1,p')
+PACKAGE_VERSION = $(shell dpkg-parsechangelog | sed -rne 's/^Version: .*~bzr([^-]+).*/\1/p')
 PACKAGE_DIRECTORY=$(PACKAGE_NAME)-0~bzr$(PACKAGE_VERSION).orig
 PACKAGE_FILENAME=$(PACKAGE_NAME)_0~bzr$(PACKAGE_VERSION).orig.tar.gz
 
