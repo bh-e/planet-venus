@@ -1,7 +1,7 @@
 diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/planet.py
---- planet-venus_0~bzr86.orig/planet.py	2008-03-20 23:21:05.000000000 +0000
-+++ planet-venus_0~bzr86.orig.new/planet.py	2008-03-20 23:30:36.000000000 +0000
-@@ -13,30 +13,89 @@
+--- planet-venus_0~bzr86.orig/planet.py	2008-03-20 23:39:53.000000000 +0000
++++ planet-venus_0~bzr86.orig.new/planet.py	2008-03-20 23:47:41.000000000 +0000
+@@ -13,30 +13,90 @@
                  "Jeff Waugh <jdub@perkypants.org>" ]
  __license__ = "Python"
  
@@ -77,7 +77,8 @@ diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/plan
 +Report bugs using the `reportbug' command."""
 +            sys.exit(0)
 +        elif arg == "-V" or arg == "--version":
-+            print """planet - Planet Venus 20080213
++            print """planet - Planet Venus @version@
++
 +Copyright (C) 2007, 2008 Sam Ruby <rubys@intertwingly.net>
 +
 +Licenced under the Python Software Foundation License Version 2.
@@ -102,7 +103,7 @@ diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/plan
          elif arg == "-o" or arg == "--offline":
              offline = 1
          elif arg == "-n" or arg == "--only-if-new":
-@@ -44,17 +103,27 @@
+@@ -44,17 +104,27 @@
          elif arg == "-x" or arg == "--expunge":
              expunge = 1
          elif arg.startswith("-"):
