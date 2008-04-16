@@ -79,7 +79,7 @@ diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/plan
 +        elif arg == "-V" or arg == "--version":
 +            print """planet - Planet Venus @version@
 +
-+Copyright (C) 2008 Sam Ruby <rubys@intertwingly.net>.
++Copyright 2008, Sam Ruby <rubys@intertwingly.net>
 +
 +Licenced under the Python Software Foundation License Version 2.
 +

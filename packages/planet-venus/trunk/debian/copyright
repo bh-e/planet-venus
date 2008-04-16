@@ -7,194 +7,164 @@ X-Source-Original-Depends: bzr
 X-Upstream-Author: Sam Ruby <rubys@intertwingly.net>
 
 Files: *
-Copyright: Copyright (C) 2008 Sam Ruby <rubys@intertwingly.net>
- Copyright (C) 2007 Scott James Remnant <scott@netsplit.com>
- Copyright (C) 2007 Jeff Waugh <jdub@perkypants.org>
- Copyright (C) 2007 Eric van der Vlist <vdv@dyomedea.com>
+Copyright: Copyright 2008, Sam Ruby <rubys@intertwingly.net>
+ Copyright 2007, Scott James Remnant <scott@netsplit.com>
+ Copyright 2007, Jeff Waugh <jdub@perkypants.org>
+ Copyright 2007, Eric van der Vlist <vdv@dyomedea.com>
 License: PSF-2
- Licenced under the Python Software Foundation License Version 2.
- .
- Python Software Foundation License Version 2
- --------------------------------------------
- .
-   1. This LICENSE AGREEMENT is between the Python Software Foundation ("PSF"),
-      and the Individual or Organization ("Licensee") accessing and otherwise
-      using Python 2.1.1 software in source or binary form and its associated
-      documentation.
- .
-   2. Subject to the terms and conditions of this License Agreement, PSF hereby
-      grants Licensee a nonexclusive, royalty-free, world-wide license to
-      reproduce, analyze, test, perform and/or display publicly, prepare
-      derivative works, distribute, and otherwise use Python 2.1.1 alone or in
-      any derivative version, provided, however, that PSF's License Agreement
-      and PSF's notice of copyright, i.e., "Copyright (c) 2001 Python Software
-      Foundation; All Rights Reserved" are retained in Python 2.1.1 alone or in
-      any derivative version prepared by Licensee.
- .
-   3. In the event Licensee prepares a derivative work that is based on or
-      incorporates Python 2.1.1 or any part thereof, and wants to make the
-      derivative work available to others as provided herein, then Licensee
-      hereby agrees to include in any such work a brief summary of the changes
-      made to Python 2.1.1.
- .
-   4. PSF is making Python 2.1.1 available to Licensee on an "AS IS" basis. PSF
-      MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF
-      EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND DISCLAIMS ANY REPRESENTATION
-      OR WARRANTY OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR
-      THAT THE USE OF PYTHON 2.1.1 WILL NOT INFRINGE ANY THIRD PARTY RIGHTS.
- .
-   5. PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON 2.1.1 FOR
-      ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS A RESULT OF
-      MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON 2.1.1, OR ANY
-      DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.
- .
-   6. This License Agreement will automatically terminate upon a material breach
-      of its terms and conditions.
- .
-   7. Nothing in this License Agreement shall be deemed to create any
-      relationship of agency, partnership, or joint venture between PSF and
-      Licensee. This License Agreement does not grant permission to use PSF
-      trademarks or trade name in a trademark sense to endorse or promote
-      products or services of Licensee, or any third party.
- .
-   8. By copying, installing or otherwise using Python 2.1.1, Licensee agrees to
-      be bound by the terms and conditions of this License Agreement.
+
+Files: debian/*
+Copyright: Copyright 2008, Noah Slater <nslater@bytesexual.org>
+License: GAP
 
 Files: planet/vendor/compat_logging/*
-Copyright: Copyright (C) 2002 Vinay Sajip <vinay_sajip@yahoo.co.uk>
+Copyright: Copyright 2002, Vinay Sajip <vinay_sajip@yahoo.co.uk>
 License: MIT
- Licenced under an MIT License variant.
- .
- MIT License
- -----------
- .
  Permission to use, copy, modify, and distribute this software and its
- documentation for any purpose and without fee is hereby granted, provided that
- the above copyright notice appear in all copies and that both that copyright
- notice and this permission notice appear in supporting documentation, and that
- the name of Vinay Sajip not be used in advertising or publicity pertaining to
- distribution of the software without specific, written prior permission.
- .
+ documentation for any purpose and without fee is hereby granted,
+ provided that the above copyright notice appear in all copies and that
+ both that copyright notice and this permission notice appear in
+ supporting documentation, and that the name of Vinay Sajip
+ not be used in advertising or publicity pertaining to distribution
+ of the software without specific, written prior permission.
  VINAY SAJIP DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
- ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL VINAY
- SAJIP BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
- DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
- ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
- CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+ VINAY SAJIP BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR
+ ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
+ IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: planet/vendor/feedparser.py
-Copyright: Copyright (C) 2007 Mark Pilgrim <mark@diveintomark.org>
+Copyright: Copyright 2007, Mark Pilgrim <mark@diveintomark.org>
 License: MIT
- Licenced under an MIT License variant.
+ Redistribution and use in source and binary forms, with or without modification,
+ are permitted provided that the following conditions are met:
  .
- MIT License
- -----------
+ * Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
  .
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
- .
-   * Redistributions of source code must retain the above copyright notice,
-     this list of conditions and the following disclaimer.
- .
-   * Redistributions in binary form must reproduce the above copyright notice,
-     this list of conditions and the following disclaimer in the documentation
-     and/or other materials provided with the distribution.
- .
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND
- ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
- ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
- ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS'
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
 
 Files: planet/vendor/httplib2/*
-Copyright: Copyright (C) 2006 Joe Gregorio <joe@bitworking.org>
+Copyright: Copyright 2006, Joe Gregorio <joe@bitworking.org>
+License: MIT-any
+
+Files: planet/vendor/htmltmpl.py
+Copyright: Copyright 2004, Tomas Styblo <tripie@cpan.org>
+License: GPL-any
+
+Files: planet/vendor/timeoutsocket.py
+Copyright: Copyright 2001, Timothy O'Malley <timo@alum.mit.edu>
 License: MIT
- Licenced under an MIT License variant.
+ Permission to use, copy, modify, and distribute this software
+ and its documentation for any purpose and without fee is hereby
+ granted, provided that the above copyright notice appear in all
+ copies and that both that copyright notice and this permission
+ notice appear in supporting documentation, and that the name of
+ Timothy O'Malley  not be used in advertising or publicity
+ pertaining to distribution of the software without specific, written
+ prior permission.
  .
- MIT License
- -----------
- .
+ Timothy O'Malley DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+ SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS, IN NO EVENT SHALL Timothy O'Malley BE LIABLE FOR
+ ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+ WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ PERFORMANCE OF THIS SOFTWARE.
+
+Files: debian/patches/theme-diveintomark.patch
+Copyright: Copyright 2008, Mark Pilgrim <mark@diveintomark.org>
+License: MIT
  Permission is hereby granted, free of charge, to any person obtaining a copy of
  this software and associated documentation files (the "Software"), to deal in
  the Software without restriction, including without limitation the rights to
- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
- of the Software, and to permit persons to whom the Software is furnished to do
- so, subject to the following conditions:
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
  .
  The above copyright notice and this permission notice shall be included in all
  copies or substantial portions of the Software.
  .
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Files: planet/vendor/htmltmpl.py
-Copyright: Copyright (C) 2004 Tomas Styblo <tripie@cpan.org>
-License: GPL-any
- Licenced under any version of the GNU General Public Licence.
+License: PSF-2
+ PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
+ --------------------------------------------
  .
- See the complete licence at <file:///usr/share/common-licenses/GPL>.
-
-Files: planet/vendor/timeoutsocket.py
-Copyright: Copyright (C) 2001 Timothy O'Malley <timo@alum.mit.edu>
-License: MIT
- Licenced under an MIT License variant.
+ 1. This LICENSE AGREEMENT is between the Python Software Foundation
+ ("PSF"), and the Individual or Organization ("Licensee") accessing and
+ otherwise using this software ("Python") in source or binary form and
+ its associated documentation.
  .
- MIT License
- -----------
+ 2. Subject to the terms and conditions of this License Agreement, PSF
+ hereby grants Licensee a nonexclusive, royalty-free, world-wide
+ license to reproduce, analyze, test, perform and/or display publicly,
+ prepare derivative works, distribute, and otherwise use Python
+ alone or in any derivative version, provided, however, that PSF's
+ License Agreement and PSF's notice of copyright, i.e., "Copyright (c)
+ 2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation; All Rights
+ Reserved" are retained in Python alone or in any derivative version
+ prepared by Licensee.
  .
- Permission to use, copy, modify, and distribute this software and its
- documentation for any purpose and without fee is hereby granted, provided that
- the above copyright notice appear in all copies and that both that copyright
- notice and this permission notice appear in supporting documentation, and that
- the name of Timothy O'Malley not be used in advertising or publicity pertaining
- to distribution of the software without specific, written prior permission.
+ 3. In the event Licensee prepares a derivative work that is based on
+ or incorporates Python or any part thereof, and wants to make
+ the derivative work available to others as provided herein, then
+ Licensee hereby agrees to include in any such work a brief summary of
+ the changes made to Python.
+ .
+ 4. PSF is making Python available to Licensee on an "AS IS"
+ basis. PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR
+ IMPLIED. BY WAY OF EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND
+ DISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS
+ FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON WILL NOT
+ INFRINGE ANY THIRD PARTY RIGHTS.
+ .
+ 5. PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON
+ FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS
+ A RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON,
+ OR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.
+ .
+ 6. This License Agreement will automatically terminate upon a material
+ breach of its terms and conditions.
+ .
+ 7. Nothing in this License Agreement shall be deemed to create any
+ relationship of agency, partnership, or joint venture between PSF and
+ Licensee. This License Agreement does not grant permission to use PSF
+ trademarks or trade name in a trademark sense to endorse or promote
+ products or services of Licensee, or any third party.
+ .
+ 8. By copying, installing or otherwise using Python, Licensee
+ agrees to be bound by the terms and conditions of this License
+ Agreement.
 
- Timothy O'Malley DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
- INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT
- SHALL Timothy O'Malley BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL
- DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
- WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
- OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
-Files: debian/*
-Copyright: Copyright (C) 2008 Noah Slater <nslater@bytesexual.org>
 License: GAP
  Copying and distribution of this package, with or without modification, are
  permitted in any medium without royalty provided the copyright notice and this
  notice are preserved.
 
-Files: debian/theme/diveintomark_20080214.tar.gz.uu
-Copyright: Copyright (C) 2008 Mark Pilgrim <mark@diveintomark.org>
-License: MIT
- Licenced under an MIT License variant.
- .
- MIT License
- -----------
- .
- Permission is hereby granted, free of charge, to any person obtaining a copy of
- this software and associated documentation files (the "Software"), to deal in
- the Software without restriction, including without limitation the rights to
- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
- of the Software, and to permit persons to whom the Software is furnished to do
- so, subject to the following conditions:
- .
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
- .
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
+License: MIT-any
+ Unspecified MIT style licence.
+
+License: GPL-any
+ On Debian systems the full text of the GNU General Public License can be found
+ in the `/usr/share/common-licenses/GPL' file.
