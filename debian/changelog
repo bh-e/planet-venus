@@ -1,9 +1,10 @@
-planet-venus (0~bzr86-2) UNRELEASED; urgency=low
+planet-venus (0~bzr94-1) unstable; urgency=low
 
+  * New upstream snapshot.
   * Removed linda overrides.
   * Improved debian/copyright file per the proposed standard.
 
- -- Noah Slater <nslater@bytesexual.org>  Tue, 20 May 2008 15:09:54 +0100
+ -- Noah Slater <nslater@bytesexual.org>  Tue, 20 May 2008 15:19:48 +0100
 
 planet-venus (0~bzr86-1) experimental; urgency=low
 
