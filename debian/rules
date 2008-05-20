@@ -48,7 +48,6 @@ common-install-prehook-impl::
 	rm -fr debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/httplib2
 	cp -R debian/planet.ini debian/planet-venus/usr/share/planet-venus/example/debian.ini
 	cp debian/binary.lintian-overrides debian/planet-venus/usr/share/lintian/overrides/planet-venus
-	cp debian/linda-overrides debian/planet-venus/usr/share/linda/overrides/planet-venus
 
 binary-install/planet-venus::
 	dh_pysupport -pplanet-venus -X example -X filter
