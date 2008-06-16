@@ -8,8 +8,6 @@
 # permitted in any medium without royalty provided the copyright notice and this
 # notice are preserved.
 
-# Makefile used by dpkg-buildpackage to create a deb archive.
-
 include /usr/share/cdbs/1/rules/buildcore.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/rules/simple-patchsys.mk
