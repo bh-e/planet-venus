@@ -1,8 +1,18 @@
+planet-venus (0~bzr95-1) unstable; urgency=low
+
+  * New upstream snapshot.
+  * Added drscheme to Conflucts. Closes: #484716
+  * Improved debian/copyright file per the proposed standard.
+  * Minor formatting improvements to debian/rules.
+  * Updated Standards-Version to 3.8.0.
+
+ -- Noah Slater <nslater@bytesexual.org>  Tue, 17 Jun 2008 23:18:51 +0100
+
 planet-venus (0~bzr94-1) unstable; urgency=low
 
   * New upstream snapshot.
   * Removed linda overrides.
-  * Improved debian/copyright file per the proposed standard.
+  * Updated debian/copyright per latest proposed format.
 
  -- Noah Slater <nslater@bytesexual.org>  Tue, 20 May 2008 15:19:48 +0100
 

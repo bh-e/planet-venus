@@ -18,15 +18,15 @@ REPOSITORY_URI = http://intertwingly.net/code/venus/
 
 PACKAGE_NAME = planet-venus
 PACKAGE_VERSION = $(shell dpkg-parsechangelog | sed -rne 's/^Version: .*~bzr([^-]+).*/\1/p')
-PACKAGE_DIRECTORY=$(PACKAGE_NAME)-0~bzr$(PACKAGE_VERSION).orig
-PACKAGE_FILENAME=$(PACKAGE_NAME)_0~bzr$(PACKAGE_VERSION).orig.tar.gz
+PACKAGE_DIRECTORY = $(PACKAGE_NAME)-0~bzr$(PACKAGE_VERSION).orig
+PACKAGE_FILENAME = $(PACKAGE_NAME)_0~bzr$(PACKAGE_VERSION).orig.tar.gz
 
 clean::
 	rm -f planet.sed.py
 
-# XXX: The bundled feedparser.py is a pre-release version so we can't depend on
-# XXX: the standard packaged version. The other three bundled modules might be
-# XXX: nice as external packages, one day.
+# @@ The bundled feedparser.py is a pre-release version so we can't depend on
+# @@ the standard packaged version. The other three bundled modules might be
+# @@ nice as external packages.
 
 common-install-prehook-impl::
 	sed "s/@version@/$(PACKAGE_VERSION)/" planet.py > planet.sed.py
