@@ -1,112 +1,15 @@
-X-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
-X-Debianized-By: Noah Slater <nslater@bytesexual.org>
-X-Debianized-Date: Wed, 13 Feb 2008 09:20:18 +0000
-X-Source-Downloaded-From: http://www.intertwingly.net/code/venus/
-X-Source-Get-Original: ./debian/rules get-orig-source
-X-Source-Original-Depends: bzr
-X-Upstream-Author: Sam Ruby <rubys@intertwingly.net>
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+Packaged-By: Noah Slater <nslater@bytesexual.org>
+Packaged-Date: Wed, 13 Feb 2008 09:20:18 +0000
+Original-Source-Location: http://www.intertwingly.net/code/venus/
+Original-Source-Command: ./debian/rules get-orig-source
+Original-Source-Depends: bzr
 
 Files: *
 Copyright: Copyright 2008, Sam Ruby <rubys@intertwingly.net>
  Copyright 2007, Scott James Remnant <scott@netsplit.com>
  Copyright 2007, Jeff Waugh <jdub@perkypants.org>
  Copyright 2007, Eric van der Vlist <vdv@dyomedea.com>
-License: PSF-2
-
-Files: debian/*
-Copyright: Copyright 2008, Noah Slater <nslater@bytesexual.org>
-License: GAP
-
-Files: planet/vendor/compat_logging/*
-Copyright: Copyright 2002, Vinay Sajip <vinay_sajip@yahoo.co.uk>
-License: MIT
- Permission to use, copy, modify, and distribute this software and its
- documentation for any purpose and without fee is hereby granted,
- provided that the above copyright notice appear in all copies and that
- both that copyright notice and this permission notice appear in
- supporting documentation, and that the name of Vinay Sajip
- not be used in advertising or publicity pertaining to distribution
- of the software without specific, written prior permission.
- VINAY SAJIP DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
- ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
- VINAY SAJIP BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR
- ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
- IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
- OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
-Files: planet/vendor/feedparser.py
-Copyright: Copyright 2007, Mark Pilgrim <mark@diveintomark.org>
-License: MIT
- Redistribution and use in source and binary forms, with or without modification,
- are permitted provided that the following conditions are met:
- .
- * Redistributions of source code must retain the above copyright notice,
-   this list of conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
- .
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS'
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGE.
-
-Files: planet/vendor/httplib2/*
-Copyright: Copyright 2006, Joe Gregorio <joe@bitworking.org>
-License: MIT-any
-
-Files: planet/vendor/htmltmpl.py
-Copyright: Copyright 2004, Tomas Styblo <tripie@cpan.org>
-License: GPL-any
-
-Files: planet/vendor/timeoutsocket.py
-Copyright: Copyright 2001, Timothy O'Malley <timo@alum.mit.edu>
-License: MIT
- Permission to use, copy, modify, and distribute this software
- and its documentation for any purpose and without fee is hereby
- granted, provided that the above copyright notice appear in all
- copies and that both that copyright notice and this permission
- notice appear in supporting documentation, and that the name of
- Timothy O'Malley  not be used in advertising or publicity
- pertaining to distribution of the software without specific, written
- prior permission.
- .
- Timothy O'Malley DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
- SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
- AND FITNESS, IN NO EVENT SHALL Timothy O'Malley BE LIABLE FOR
- ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
- WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
- WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
- ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
- PERFORMANCE OF THIS SOFTWARE.
-
-Files: debian/patches/theme-diveintomark.patch
-Copyright: Copyright 2008, Mark Pilgrim <mark@diveintomark.org>
-License: MIT
- Permission is hereby granted, free of charge, to any person obtaining a copy of
- this software and associated documentation files (the "Software"), to deal in
- the Software without restriction, including without limitation the rights to
- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
- the Software, and to permit persons to whom the Software is furnished to do so,
- subject to the following conditions:
- .
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
- .
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
- IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 License: PSF-2
  PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
  --------------------------------------------
@@ -157,14 +60,102 @@ License: PSF-2
  agrees to be bound by the terms and conditions of this License
  Agreement.
 
+Files: debian/*
+Copyright: Copyright 2008, Noah Slater <nslater@bytesexual.org>
 License: GAP
  Copying and distribution of this package, with or without modification, are
  permitted in any medium without royalty provided the copyright notice and this
  notice are preserved.
 
+Files: planet/vendor/compat_logging/*
+Copyright: Copyright 2002, Vinay Sajip <vinay_sajip@yahoo.co.uk>
+License: MIT
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted,
+ provided that the above copyright notice appear in all copies and that
+ both that copyright notice and this permission notice appear in
+ supporting documentation, and that the name of Vinay Sajip
+ not be used in advertising or publicity pertaining to distribution
+ of the software without specific, written prior permission.
+ VINAY SAJIP DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+ ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+ VINAY SAJIP BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR
+ ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
+ IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Files: planet/vendor/feedparser.py
+Copyright: Copyright 2007, Mark Pilgrim <mark@diveintomark.org>
+License: MIT
+ Redistribution and use in source and binary forms, with or without modification,
+ are permitted provided that the following conditions are met:
+ .
+ * Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS'
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+Files: planet/vendor/httplib2/*
+Copyright: Copyright 2006, Joe Gregorio <joe@bitworking.org>
 License: MIT-any
  Unspecified MIT style licence.
 
+Files: planet/vendor/htmltmpl.py
+Copyright: Copyright 2004, Tomas Styblo <tripie@cpan.org>
 License: GPL-any
  On Debian systems the full text of the GNU General Public License can be found
  in the `/usr/share/common-licenses/GPL' file.
+
+Files: planet/vendor/timeoutsocket.py
+Copyright: Copyright 2001, Timothy O'Malley <timo@alum.mit.edu>
+License: MIT
+ Permission to use, copy, modify, and distribute this software
+ and its documentation for any purpose and without fee is hereby
+ granted, provided that the above copyright notice appear in all
+ copies and that both that copyright notice and this permission
+ notice appear in supporting documentation, and that the name of
+ Timothy O'Malley  not be used in advertising or publicity
+ pertaining to distribution of the software without specific, written
+ prior permission.
+ .
+ Timothy O'Malley DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+ SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS, IN NO EVENT SHALL Timothy O'Malley BE LIABLE FOR
+ ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+ WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+ ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ PERFORMANCE OF THIS SOFTWARE.
+
+Files: debian/patches/theme-diveintomark.patch
+Copyright: Copyright 2008, Mark Pilgrim <mark@diveintomark.org>
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
