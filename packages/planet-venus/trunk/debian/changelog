@@ -1,7 +1,7 @@
-planet-venus (0~bzr95-1) unstable; urgency=low
+planet-venus (0~bzr95-1) unstable; urgency=medium
 
   * New upstream snapshot.
-  * Added drscheme to Conflucts. Closes: #484716
+  * Added drscheme to Conflicts. Closes: #484716
   * Improved debian/copyright file per the proposed standard.
   * Minor formatting improvements to debian/rules.
   * Updated Standards-Version to 3.8.0.
