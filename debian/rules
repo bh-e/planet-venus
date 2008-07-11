@@ -17,6 +17,9 @@ DEB_ORIG_DIRECTORY=$(DEB_SOURCE_PACKAGE)-$(DEB_UPSTREAM_VERSION)
 DEB_ORIG_FILENAME=$(DEB_SOURCE_PACKAGE)_$(DEB_UPSTREAM_VERSION).orig.tar.gz
 DEB_REPOS_VERSION = $(shell echo $(DEB_UPSTREAM_VERSION) | sed -r "s/.*~bzr//")
 
+# @@ workaround for #486848
+binary-arch binary-indep: build
+
 clean::
 	rm -f planet.sed.py
 
