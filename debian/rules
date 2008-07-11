@@ -12,12 +12,10 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 
 DEB_COMPRESS_EXCLUDE = .png .svg
 
-REPOSITORY_URI = http://intertwingly.net/code/venus/
-
-PACKAGE_NAME = planet-venus
-PACKAGE_VERSION = $(shell dpkg-parsechangelog | sed -rne 's/^Version: .*~bzr([^-]+).*/\1/p')
-PACKAGE_DIRECTORY = $(PACKAGE_NAME)-0~bzr$(PACKAGE_VERSION).orig
-PACKAGE_FILENAME = $(PACKAGE_NAME)_0~bzr$(PACKAGE_VERSION).orig.tar.gz
+DEB_ORIG_URI = http://intertwingly.net/code/venus/
+DEB_ORIG_DIRECTORY=$(DEB_SOURCE_PACKAGE)-$(DEB_UPSTREAM_VERSION)
+DEB_ORIG_FILENAME=$(DEB_SOURCE_PACKAGE)_$(DEB_UPSTREAM_VERSION).orig.tar.gz
+DEB_REPOS_VERSION = $(shell echo $(DEB_UPSTREAM_VERSION) | sed -r "s/.*~bzr//")
 
 clean::
 	rm -f planet.sed.py
@@ -27,7 +25,7 @@ clean::
 # @@ nice as external packages.
 
 common-install-prehook-impl::
-	sed "s/@version@/$(PACKAGE_VERSION)/" planet.py > planet.sed.py
+	sed "s/@version@/$(DEB_REPOS_VERSION)/" planet.py > planet.sed.py
 	chmod 755 planet.sed.py
 	help2man -N -n "an aggregate feed generator" ./planet.sed.py > planet.1
 	cp -R docs debian/planet-venus/usr/share/doc/planet-venus/html
@@ -49,6 +47,9 @@ binary-install/planet-venus::
 	dh_pysupport -pplanet-venus -X example -X filter
 
 get-orig-source:
-	bzr export -r $(PACKAGE_VERSION) $(PACKAGE_FILENAME) $(REPOSITORY_URI)
+	bzr export -r $(DEB_REPOS_VERSION) $(DEB_ORIG_DIRECTORY) $(DEB_ORIG_URI)
+	tar -czf $(DEB_ORIG_FILENAME) $(DEB_ORIG_DIRECTORY)
+	rm -fr $(DEB_ORIG_DIRECTORY)
+
 
 .PHONY: get-orig-source
