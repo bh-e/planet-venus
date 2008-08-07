@@ -18,7 +18,7 @@ Depends: ${python:Depends}, ${misc:Depends}, python-chardet, python-html5lib,
 Recommends: python-libxslt1
 Suggests: python-django, python-genshi
 Conflicts: drscheme, plt-scheme, planet
-Description: aggregate feed generator
+Description: an aggregate feed generator
  Planet Venus downloads news feeds published by web sites and
  aggregates their content together into a single combined feed, latest
  news first.
