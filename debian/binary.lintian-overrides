@@ -1,1 +1,5 @@
+planet-venus binary: debian-copyright-line-too-long line 1
+planet-venus binary: debian-copyright-line-too-long line 74
+planet-venus binary: debian-copyright-line-too-long line 82
+planet-venus binary: debian-copyright-line-too-long line 108
 planet-venus binary: package-contains-empty-directory usr/share/planet-venus/theme/musings/images/
