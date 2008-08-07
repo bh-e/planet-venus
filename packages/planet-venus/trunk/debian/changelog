@@ -1,10 +1,9 @@
-planet-venus (0~bzr95-2) unstable; urgency=high
+planet-venus (0~bzr95-2) unstable; urgency=medium
 
   * Added debian/README.source for upstream source information.
   * Added Conflicts with plt-scheme. Closes: #484716
-  * Updated Section to extra per policy section 2.5 regarding Conflicts.
-  * Updated debian/binary.lintian-overrides to ignore line length warnings.
-  * Updated debian/control with improved short description.
+  * Updated Priority to extra per policy section 2.5 regarding Conflicts.
+  * Updated debian/binary.lintian-overrides to ignore line length warning.
   * Updated debian/copyright per latest proposed format.
   * Updated debian/rules to make better use of CDBS variables.
 
