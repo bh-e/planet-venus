@@ -1,4 +1,4 @@
-planet-venus (0~bzr95-2) unstable; urgency=high
+planet-venus (0~bzr95-2) unstable; urgency=medium
 
   * Added debian/README.source for upstream source information.
   * Added Conflicts with plt-scheme. Closes: #484716
