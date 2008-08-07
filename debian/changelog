@@ -4,10 +4,11 @@ planet-venus (0~bzr95-2) unstable; urgency=high
   * Added Conflicts with plt-scheme. Closes: #484716
   * Updated Section to extra per policy section 2.5 regarding Conflicts.
   * Updated debian/binary.lintian-overrides to ignore line length warnings.
+  * Updated debian/control with improved short description.
   * Updated debian/copyright per latest proposed format.
   * Updated debian/rules to make better use of CDBS variables.
 
- -- Noah Slater <nslater@bytesexual.org>  Thu, 07 Aug 2008 14:56:23 +0100
+ -- Noah Slater <nslater@bytesexual.org>  Thu, 07 Aug 2008 15:14:12 +0100
 
 planet-venus (0~bzr95-1) unstable; urgency=medium
 
