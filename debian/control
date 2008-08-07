@@ -1,6 +1,6 @@
 Source: planet-venus
 Section: python
-Priority: optional
+Priority: extra
 Maintainer: Noah Slater <nslater@bytesexual.org>
 Uploaders: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
 Standards-Version: 3.8.0
@@ -17,7 +17,7 @@ Depends: ${python:Depends}, ${misc:Depends}, python-chardet, python-html5lib,
  python-utidylib
 Recommends: python-libxslt1
 Suggests: python-django, python-genshi
-Conflicts: drscheme, planet
+Conflicts: drscheme, plt-scheme, planet
 Description: aggregate feed generator
  Planet Venus downloads news feeds published by web sites and
  aggregates their content together into a single combined feed, latest
