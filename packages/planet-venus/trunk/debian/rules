@@ -50,9 +50,8 @@ binary-install/planet-venus::
 	dh_pysupport -pplanet-venus -X example -X filter
 
 # @@ only works from source directory, see #494141
+.PHONY: get-orig-source
 get-orig-source:
 	bzr export -r $(DEB_REPOS_VERSION) $(DEB_ORIG_DIRECTORY) $(DEB_ORIG_URI)
 	tar -czf $(DEB_ORIG_FILENAME) $(DEB_ORIG_DIRECTORY)
 	rm -fr $(DEB_ORIG_DIRECTORY)
-
-.PHONY: get-orig-source
