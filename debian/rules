@@ -20,23 +20,25 @@ DEB_REPOS_VERSION = $(shell echo $(DEB_UPSTREAM_VERSION) | sed -r "s/.*~bzr//")
 # @@ workaround for #486848
 binary-arch binary-indep: build
 
-clean::
-	rm -f planet.sed.py
+cleanbuilddir::
+        sed -i -e "s/\"$(DEB_UPSTREAM_VERSION)\"/@version@/" planet.py
+
+post-patches::
+        sed -i -e "s/@version@/\"$(DEB_UPSTREAM_VERSION)\"/" planet.py
 
 # @@ The bundled feedparser.py is a pre-release version so we can't depend on
 # @@ the standard packaged version. The other three bundled modules might be
 # @@ nice as external packages.
 
 common-install-prehook-impl::
-	sed "s/@version@/$(DEB_REPOS_VERSION)/" planet.py > planet.sed.py
-	chmod 755 planet.sed.py
-	help2man -N -n "an aggregate feed generator" ./planet.sed.py > planet.1
+	chmod 755 planet.py
+	help2man -N -n "an aggregate feed generator" ./planet.py > planet.1
 	cp -R docs debian/planet-venus/usr/share/doc/planet-venus/html
 	cp -R examples debian/planet-venus/usr/share/planet-venus/example
 	chmod 755 debian/planet-venus/usr/share/planet-venus/example/filters/guess-language/guess-language.py
 	chmod 755 debian/planet-venus/usr/share/planet-venus/example/filters/guess-language/trigram.py
 	cp -R filters debian/planet-venus/usr/share/planet-venus/filter
-	cp -R planet.sed.py debian/planet-venus/usr/bin/planet
+	cp -R planet.py debian/planet-venus/usr/bin/planet
 	cp -R themes debian/planet-venus/usr/share/planet-venus/theme
 	rm -f debian/planet-venus/usr/share/planet-venus/theme/diveintomark/LICENCE
 	cp -R planet debian/planet-venus/usr/share/python-support/planet-venus
