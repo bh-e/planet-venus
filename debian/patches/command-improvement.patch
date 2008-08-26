@@ -38,7 +38,7 @@ diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/plan
 -            print " -n, --only-if-new   Only spider new feeds"
 -            print " -x, --expunge       Expunge old entries from cache"
 -            print
-+            print """Usage: planet [OPTION]... CONFIGURATION-FILE
++            print """Usage: planet [OPTION]... [CONFIGURATION-FILE]
 +
 +Planet Venus downloads news feeds published by web sites and aggregates their
 +content together into a single combined feed, latest news first.
