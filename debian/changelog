@@ -1,14 +1,10 @@
 planet-venus (0~bzr95-3) UNRELEASED; urgency=low
 
-  [ Noah Slater ]
   * Updated debian/rules to use clean and cleanbuilddir targets.
   * Updated patch for --help output to better satisfy GNU Coding Standards.
+  * Updated debian/control, updated Vcs-Browser.
 
-  [ Sandro Tosi ]
-  * debian/control
-    - switch Vcs-Browser field to viewsvn
-
- -- Noah Slater <nslater@bytesexual.org>  Tue, 26 Aug 2008 14:27:06 +0100
+ -- Noah Slater <nslater@tumbolia.org>  Sun, 18 Jan 2009 20:25:45 +0000
 
 planet-venus (0~bzr95-2) unstable; urgency=medium
 
@@ -19,7 +15,7 @@ planet-venus (0~bzr95-2) unstable; urgency=medium
   * Updated debian/copyright per latest proposed format.
   * Updated debian/rules to make better use of CDBS variables.
 
- -- Noah Slater <nslater@bytesexual.org>  Thu, 07 Aug 2008 15:14:12 +0100
+ -- Noah Slater <nslater@tumbolia.org>  Thu, 07 Aug 2008 15:14:12 +0100
 
 planet-venus (0~bzr95-1) unstable; urgency=medium
 
@@ -29,7 +25,7 @@ planet-venus (0~bzr95-1) unstable; urgency=medium
   * Updated debian/copyright per latest proposed format.
   * Updated Standards-Version to 3.8.0.
 
- -- Noah Slater <nslater@bytesexual.org>  Tue, 17 Jun 2008 23:18:51 +0100
+ -- Noah Slater <nslater@tumbolia.org>  Tue, 17 Jun 2008 23:18:51 +0100
 
 planet-venus (0~bzr94-1) unstable; urgency=low
 
@@ -37,10 +33,10 @@ planet-venus (0~bzr94-1) unstable; urgency=low
   * Removed linda overrides.
   * Updated debian/copyright per latest proposed format.
 
- -- Noah Slater <nslater@bytesexual.org>  Tue, 20 May 2008 15:19:48 +0100
+ -- Noah Slater <nslater@tumbolia.org>  Tue, 20 May 2008 15:19:48 +0100
 
 planet-venus (0~bzr86-1) experimental; urgency=low
 
   * Initial release. Closes: #461883
 
- -- Noah Slater <nslater@bytesexual.org>  Tue, 04 Mar 2008 22:47:49 +0000
+ -- Noah Slater <nslater@tumbolia.org>  Tue, 04 Mar 2008 22:47:49 +0000
