@@ -3,8 +3,9 @@ planet-venus (0~bzr95-3) UNRELEASED; urgency=low
   * Updated debian/rules to use clean and cleanbuilddir targets.
   * Updated patch for --help output to better satisfy GNU Coding Standards.
   * Updated debian/control, updated Vcs-Browser.
+  * Updated debian/control, updated Build-Depends on debhelper to 7.2.11.
 
- -- Noah Slater <nslater@tumbolia.org>  Sun, 18 Jan 2009 20:25:45 +0000
+ -- Noah Slater <nslater@tumbolia.org>  Thu, 14 May 2009 17:01:03 +0100
 
 planet-venus (0~bzr95-2) unstable; urgency=medium
 
