@@ -21,10 +21,13 @@ DEB_REPOS_VERSION = $(shell echo $(DEB_UPSTREAM_VERSION) | sed -r "s/.*~bzr//")
 binary-arch binary-indep: build
 
 cleanbuilddir::
-        sed -i -e "s/\"$(DEB_UPSTREAM_VERSION)\"/@version@/" planet.py
+	sed -i -e "s/\"$(DEB_UPSTREAM_VERSION)\"/@version@/" planet.py
 
 post-patches::
-        sed -i -e "s/@version@/\"$(DEB_UPSTREAM_VERSION)\"/" planet.py
+	sed -i -e "s/@version@/\"$(DEB_UPSTREAM_VERSION)\"/" planet.py
+
+clean::
+	find . -name '*\.py[co]' -delete
 
 # @@ The bundled feedparser.py is a pre-release version so we can't depend on
 # @@ the standard packaged version. The other three bundled modules might be

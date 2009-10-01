@@ -1,11 +1,18 @@
-planet-venus (0~bzr95-3) UNRELEASED; urgency=low
+planet-venus (0~bzr116-1) unstable; urgency=high
 
+  [ Piotr Ożarowski ]
+  * New upstream snapshot (Closes: #546179 - CVE-2009-2937)
+  * Add python-beautifulsoup to Recommends and python-lxml to Suggests
+  * Remove .py[oc] files in clean rule
+  * Standards-Version bumped to 3.8.3 (no changes needed)
+
+  [ Noah Slater ]
   * Updated debian/rules to use clean and cleanbuilddir targets.
   * Updated patch for --help output to better satisfy GNU Coding Standards.
   * Updated debian/control, updated Vcs-Browser.
   * Updated debian/control, updated Build-Depends on debhelper to 7.2.11.
 
- -- Noah Slater <nslater@tumbolia.org>  Thu, 14 May 2009 17:01:03 +0100
+ -- Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>  Thu, 01 Oct 2009 19:12:13 +0200
 
 planet-venus (0~bzr95-2) unstable; urgency=medium
 
