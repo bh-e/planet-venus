@@ -1,3 +1,9 @@
+planet-venus (0~bzr116-2) UNRELEASED; urgency=low
+
+  * Use canonical URIs for Vcs-* fields.
+
+ -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 18:05:27 +0200
+
 planet-venus (0~bzr116-1) unstable; urgency=high
 
   [ Piotr Ożarowski ]

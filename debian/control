@@ -7,8 +7,8 @@ Standards-Version: 3.8.3
 Build-Depends: cdbs (>= 0.4.42), debhelper (>= 7.2.11)
 Build-Depends-Indep: help2man, python-support (>= 0.6.4), python
 Homepage: http://www.intertwingly.net/code/venus/
-Vcs-Svn: svn://svn.debian.org/python-apps/packages/planet-venus/trunk/
-Vcs-Browser: http://svn.debian.org/viewsvn/python-apps/packages/planet-venus/trunk/
+Vcs-Svn: svn://anonscm.debian.org/python-apps/packages/planet-venus/trunk/
+Vcs-Browser: http://anonscm.debian.org/viewvc/python-apps/packages/planet-venus/trunk/
 
 Package: planet-venus
 Architecture: all
