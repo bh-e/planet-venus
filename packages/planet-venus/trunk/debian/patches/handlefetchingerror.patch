@@ -1,0 +1,19 @@
+Description: Handle a fetching error
+ Adjust to changed feedparser behaviour
+Author: Olivier Berger <obergix@debian.org>
+
+--- planet-venus-0~git9de2109.orig/planet/spider.py
++++ planet-venus-0~git9de2109/planet/spider.py
+@@ -286,7 +286,11 @@ def writeCache(feed_uri, feed_info, data
+     if not os.path.exists(sources): os.makedirs(sources)
+     xdoc=minidom.parseString('''<feed xmlns:planet="%s"
+       xmlns="http://www.w3.org/2005/Atom"/>\n''' % planet.xmlns)
+-    reconstitute.source(xdoc.documentElement,data.feed,data.bozo,data.version)
++    if data.get('version'):
++      format = data.version
++    else:
++      format = ''
++    reconstitute.source(xdoc.documentElement,data.feed,data.bozo,format)
+     write(xdoc.toxml().encode('utf-8'), filename(sources, feed_uri))
+     xdoc.unlink()
+ 

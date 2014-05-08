@@ -1,0 +1,3 @@
+filters/* usr/share/planet-venus/filter/
+themes/* usr/share/planet-venus/theme/
+debian/debian.ini usr/share/planet-venus/example/

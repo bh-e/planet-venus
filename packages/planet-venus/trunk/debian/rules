@@ -1,62 +1,68 @@
 #!/usr/bin/make -f
 
 # Copyright 2009, Noah Slater <nslater@tumbolia.org>
+# Copyright 2014, Olivier Berger <obergix@debian.org>
 
 # Copying and distribution of this file, with or without modification, are
 # permitted in any medium without royalty provided the copyright notice and this
 # notice are preserved.
 
-include /usr/share/cdbs/1/rules/buildcore.mk
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/rules/simple-patchsys.mk
+export DH_VERBOSE=1
 
-DEB_COMPRESS_EXCLUDE = .png .svg
+%:
+	dh $@ --with python2
 
-DEB_ORIG_URI = http://intertwingly.net/code/venus/
-DEB_ORIG_DIRECTORY = $(DEB_SOURCE_PACKAGE)-$(DEB_UPSTREAM_VERSION)
-DEB_ORIG_FILENAME = $(DEB_SOURCE_PACKAGE)_$(DEB_UPSTREAM_VERSION).orig.tar.gz
-DEB_REPOS_VERSION = $(shell echo $(DEB_UPSTREAM_VERSION) | sed -r "s/.*~bzr//")
+#override_dh_auto_build:
+#	help2man -N -n "an aggregate feed generator" --version-string="planet 1" ./planet.py > planet.1
 
-# @@ workaround for #486848
-binary-arch binary-indep: build
+override_dh_installdocs:
+	dh_installdocs
+	cp -a docs debian/planet-venus/usr/share/doc/planet-venus/html
 
-cleanbuilddir::
-	sed -i -e "s/\"$(DEB_UPSTREAM_VERSION)\"/@version@/" planet.py
+override_dh_auto_install:
+	cp planet.py debian/planet-venus/usr/bin/planet
+	cp admin_cb.py debian/planet-venus/usr/share/planet-venus/cgi-bin/
+	cp expunge.py debian/planet-venus/usr/share/planet-venus/tools
+	cp favicon.py debian/planet-venus/usr/share/planet-venus/tools
+	cp publish.py debian/planet-venus/usr/share/planet-venus/tools
+	cp spider.py debian/planet-venus/usr/share/planet-venus/tools
+	cp splice.py debian/planet-venus/usr/share/planet-venus/tools
 
-post-patches::
-	sed -i -e "s/@version@/\"$(DEB_UPSTREAM_VERSION)\"/" planet.py
+override_dh_fixperms:
+	dh_fixperms
+	find debian/planet-venus/usr/share/pyshared/planet/ -type f -name '*.py' -print0 2>/dev/null | xargs -0r chmod 644
 
-clean::
-	find . -name '*\.py[co]' -delete
+# override_dh_auto_test:
+# 	python runtests.py -v
+# 	# Re-run to for verifying that individually, 'test_foaf_document' passes (has produced "RedlandError: 'XML parser error: xmlParseCharRef: invalid xmlChar value 12'" through runtests.py above)
+# 	python tests/test_foaf.py
 
-# @@ The bundled feedparser.py is a pre-release version so we can't depend on
-# @@ the standard packaged version. The other three bundled modules might be
-# @@ nice as external packages.
+# Much borrowed from https://wiki.debian.org/onlyjob/get-orig-source :
 
-common-install-prehook-impl::
-	chmod 755 planet.py
-	help2man -N -n "an aggregate feed generator" ./planet.py > planet.1
-	cp -R docs debian/planet-venus/usr/share/doc/planet-venus/html
-	cp -R examples debian/planet-venus/usr/share/planet-venus/example
-	chmod 755 debian/planet-venus/usr/share/planet-venus/example/filters/guess-language/guess-language.py
-	chmod 755 debian/planet-venus/usr/share/planet-venus/example/filters/guess-language/trigram.py
-	cp -R filters debian/planet-venus/usr/share/planet-venus/filter
-	cp -R planet.py debian/planet-venus/usr/bin/planet
-	cp -R themes debian/planet-venus/usr/share/planet-venus/theme
-	rm -f debian/planet-venus/usr/share/planet-venus/theme/diveintomark/LICENCE
-	cp -R planet debian/planet-venus/usr/share/python-support/planet-venus
-	rm -fr debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/htmltmpl.py
-	rm -fr debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/html5lib
-	rm -fr debian/planet-venus/usr/share/python-support/planet-venus/planet/vendor/httplib2
-	cp -R debian/planet.ini debian/planet-venus/usr/share/planet-venus/example/debian.ini
-	cp debian/binary.lintian-overrides debian/planet-venus/usr/share/lintian/overrides/planet-venus
+PKD  = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG  = $(word 2,$(shell dpkg-parsechangelog -l$(PKD)/changelog | grep ^Source))
+VER ?= $(shell dpkg-parsechangelog -l$(PKD)/changelog | perl -ne 'print $$1 if m{^Version:\s+(?:\d+:)?(\d.*)(?:\-\d+.*)};')
 
-binary-install/planet-venus::
-	dh_pysupport -pplanet-venus -X example -X filter
-
-# @@ only works from source directory, see #494141
 .PHONY: get-orig-source
-get-orig-source:
-	bzr export -r $(DEB_REPOS_VERSION) $(DEB_ORIG_DIRECTORY) $(DEB_ORIG_URI)
-	tar -czf $(DEB_ORIG_FILENAME) $(DEB_ORIG_DIRECTORY)
-	rm -fr $(DEB_ORIG_DIRECTORY)
+
+get-orig-source: $(PKG)_$(VER)$(DTYPE).orig.tar.xz
+	@
+
+## checkout from git (add "git" to Build-Depends)
+UURL = git://github.com/rubys/venus.git
+UDATE = $(shell date --rfc-3339=seconds --date='TZ="UTC" $(shell echo $(VER) | perl -ne 'print "$$1-$$2-$$3" if m/\+(?:git|svn|hg)(\d{4})(\d{2})(\d{2})/')')
+$(PKG)_$(VER)$(DTYPE).orig.tar.xz:
+	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
+	@echo "# Downloading..."
+	git clone $(UURL) $(PKG)-$(VER) \
+	|| $(RM) -r $(PKG)-$(VER)
+	cd $(PKG)-$(VER) \
+	&& git checkout $(shell echo $(VER) | sed -r "s/.*~git//") \
+	&& echo "# Setting times..." \
+	&& for F in $$(git ls-tree -r --name-only HEAD); do touch --no-dereference -d "$$(git log -1 --format="%ai" -- $$F)" "$$F"; done \
+	&& echo "# Cleaning-up..." \
+	&& $(RM) -r .git .git*
+	@echo "# Packing..."
+	find -L "$(PKG)-$(VER)" -xdev -type f -print | sort \
+	| XZ_OPT="-6v" tar -caf "$(PKG)_$(VER)$(DTYPE).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
+	&& $(RM) -r "$(PKG)-$(VER)"

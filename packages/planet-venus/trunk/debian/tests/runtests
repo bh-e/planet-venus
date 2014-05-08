@@ -1,0 +1,3 @@
+#!/bin/sh
+
+python runtests.py -v

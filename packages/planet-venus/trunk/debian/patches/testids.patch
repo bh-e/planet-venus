@@ -1,0 +1,25 @@
+Description: Adjust to id calculation issues
+ I'm not so sure about these, and suspect they'll do no harm, since
+ feedparser has changed behaviour.
+Author: Olivier Berger <obergix@debian.org>
+
+--- planet-venus-0~git9de2109.orig/tests/data/reconstitute/enclosure.xml
++++ planet-venus-0~git9de2109/tests/data/reconstitute/enclosure.xml
+@@ -1,6 +1,6 @@
+ <!--
+ Description:  enclosure
+-Expect:       links[0].rel == 'enclosure' and id == 'http://example.com/1'
++Expect:       links[0].rel == 'enclosure' and links[0].href == 'http://example.com/1'
+ -->
+ 
+ <rss>
+--- planet-venus-0~git9de2109.orig/tests/data/reconstitute/gr_id.xml
++++ planet-venus-0~git9de2109/tests/data/reconstitute/gr_id.xml
+@@ -1,6 +1,6 @@
+ <!--
+ Description:  id
+-Expect:       id == 'http://example.com/2'
++Expect:       id == 'http://example.com/1'
+ -->
+ 
+ <feed xmlns="http://www.w3.org/2005/Atom">

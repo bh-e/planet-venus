@@ -7,14 +7,17 @@ The upstream source can be downloaded with the following command:
 
 You will need the following packages installed:
 
-  bzr
+  git
 
-You can patch the upstream source with the following command:
 
-  ./debian/rules patch
+The upstream repo contains copies of the following libraries for which
+a Debian package is available, which will be removed during packaging:
 
-You can add or edit patches using the following command:
+ - compat_logging (unused in Debian Python versions)
+ - feedparser     (python-feedparser)
+ - html5lib       (python-html5lib)
+ - htmltmpl       (python-htmltmpl)
+ - httplib2       (python-httplib2)
+ - portalocker    (python-portalocker)
 
-  cdbs-edit-patch
-
- -- Noah Slater <nslater@tumbolia.org>, Wed, 14 Jan 2009 16:45:09 +0000
+ -- Olivier Berger <obergix@debian.org>, Mon, 27 Jan 2014 15:47:09 +0100

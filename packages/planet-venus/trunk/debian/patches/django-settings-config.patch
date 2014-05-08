@@ -1,0 +1,22 @@
+Description: Avoid "RuntimeError: Settings already configured."
+ This seems to be better for Django 1.6
+Author: Olivier Berger <obergix@debian.org>
+
+--- planet-venus-0~git9de2109.orig/planet/shell/dj.py
++++ planet-venus-0~git9de2109/planet/shell/dj.py
+@@ -19,13 +19,13 @@ def run(script, doc, output_file=None, o
+     # I need to re-import the settings at every call because I have to 
+     # set the TEMPLATE_DIRS variable programmatically
+     from django.conf import settings
+-    settings._wrapped=None
++    #settings._wrapped=None
+     try:
+         settings.configure(
+             DEBUG=True, TEMPLATE_DEBUG=True, 
+             TEMPLATE_DIRS=(os.path.dirname(script),)
+             )
+-    except EnvironmentError:
++    except RuntimeError:
+         pass
+     from django.template import Context
+     from django.template.loader import get_template

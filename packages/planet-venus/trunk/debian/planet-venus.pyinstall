@@ -1,0 +1,4 @@
+planet/*.py planet
+planet/shell/*.py planet.shell
+planet/vendor/timeoutsocket.py planet.vendor
+planet/vendor/pubsubhubbub_publisher/*.py planet.vendor.pubsubhubbub_publisher
