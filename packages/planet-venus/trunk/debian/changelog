@@ -1,3 +1,14 @@
+planet-venus (0~git9de2109-2) unstable; urgency=low
+
+  * Almost identical to 0~git9de2109-1, but for unstable (Closes: #747381)
+  * Don't ship embedded copies of python-feedpaser (Closes: #555355,
+    Closes: #684246 - CVE-2011-1156, CVE-2011-1157, CVE-2011-1158).
+  * Fix error with Django templates (Closes: #680673).
+  * Minor fix to description to not mention Planet in Debian (Closes:
+    #568216).
+
+ -- Olivier Berger <obergix@debian.org>  Thu, 08 May 2014 19:53:31 +0200
+
 planet-venus (0~git9de2109-1) experimental; urgency=low
 
   * New upstream version (git snapshot).

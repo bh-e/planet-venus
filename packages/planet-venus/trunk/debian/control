@@ -24,4 +24,4 @@ Description: aggregate feed generator
  aggregates their content together into a single combined feed, latest
  news first.
  .
- Planet Venus is a refactoring of Planet, also available in Debian.
+ Planet Venus is a refactoring of Planet.
