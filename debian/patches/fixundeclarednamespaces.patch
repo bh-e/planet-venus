@@ -1,0 +1,96 @@
+Description: fix UndeclaredNamespace: 'xxxxxx' is not associated with a namespace
+ Render the XML test files more std compliant.
+ The tests aren't supposed to check the XML namespaces, but the
+ content of the feed, so that shouldn't harm.
+Author: Olivier Berger <obergix@debian.org>
+
+--- planet-venus-0~git9de2109.orig/tests/data/filter/tmpl/source_planet_message.xml
++++ planet-venus-0~git9de2109/tests/data/filter/tmpl/source_planet_message.xml
+@@ -3,13 +3,13 @@ Description:  message
+ Expect:       Channels[0]['message'] == 'foo' and Items[0]['channel_message'] == 'foo'
+ -->
+ 
+-<feed xmlns="http://www.w3.org/2005/Atom">
++<feed xmlns="http://www.w3.org/2005/Atom" xmlns:planet='http://planet.intertwingly.net/'>
+   <entry>
+     <source>
+       <planet:message>foo</planet:message>
+     </source>
+   </entry>
+-  <planet:source xmlns:planet='http://planet.intertwingly.net/'>
++  <planet:source>
+     <planet:message>foo</planet:message>
+   </planet:source>
+ </feed>
+--- planet-venus-0~git9de2109.orig/tests/data/filter/tmpl/source_planet_name.xml
++++ planet-venus-0~git9de2109/tests/data/filter/tmpl/source_planet_name.xml
+@@ -3,13 +3,13 @@ Description:  id
+ Expect:       Channels[0]['name'] == 'foo' and Items[0]['channel_name'] == 'foo'
+ -->
+ 
+-<feed xmlns="http://www.w3.org/2005/Atom">
++<feed xmlns="http://www.w3.org/2005/Atom" xmlns:planet='http://planet.intertwingly.net/'>
+   <entry>
+     <source>
+       <planet:name>foo</planet:name>
+     </source>
+   </entry>
+-  <planet:source xmlns:planet='http://planet.intertwingly.net/'>
++  <planet:source>
+     <planet:name>foo</planet:name>
+   </planet:source>
+ </feed>
+--- planet-venus-0~git9de2109.orig/tests/data/reconstitute/georss_box_latlong.xml
++++ planet-venus-0~git9de2109/tests/data/reconstitute/georss_box_latlong.xml
+@@ -3,7 +3,7 @@ Description:  box inside an entry (cente
+ Expect:       geo_lat == '42.991000' and geo_long == '-70.444000'
+ -->
+ 
+-<feed xmlns="http://www.w3.org/2005/Atom">
++<feed xmlns="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss">
+   <entry>
+     <georss:box>42.943 -71.032 43.039 -69.856</georss:box>
+   </entry>
+--- planet-venus-0~git9de2109.orig/tests/data/reconstitute/georss_point_latlong.xml
++++ planet-venus-0~git9de2109/tests/data/reconstitute/georss_point_latlong.xml
+@@ -3,8 +3,7 @@ Description:  point inside an entry
+ Expect:       geo_lat == '34.101646' and geo_long == '-118.326454'
+ -->
+ 
+-<feed xmlns="http://www.w3.org/2005/Atom"
+-  xmlns:twitter="http://api.twitter.com">
++<feed xmlns="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss">
+   <entry>
+     <georss:point>34.10164620,-118.32645359</georss:point>
+   </entry>
+--- planet-venus-0~git9de2109.orig/tests/data/reconstitute/georss_polygon_latlong.xml
++++ planet-venus-0~git9de2109/tests/data/reconstitute/georss_polygon_latlong.xml
+@@ -3,7 +3,7 @@ Description:  polygon inside an entry
+ Expect:       geo_lat == '34.052610' and geo_long == '-118.432212'
+ -->
+ 
+-<feed xmlns="http://www.w3.org/2005/Atom">
++<feed xmlns="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss">
+   <entry>
+     <georss:polygon>34.052610 -118.432212 34.05260997 -118.37216196 34.11240804 -118.37216196 34.11240804 -118.43221212</georss:polygon>
+   </entry>
+diff --git a/tests/data/filter/tmpl/planet_name.xml b/tests/data/filter/tmpl/planet_name.xml
+index 3c5b070..28690f7 100644
+--- a/tests/data/filter/tmpl/planet_name.xml
++++ b/tests/data/filter/tmpl/planet_name.xml
+@@ -3,13 +3,13 @@ Description:  id
+ Expect:       Channels[0]['name'] == 'foo' and Items[0]['channel_name'] == 'foo'
+ -->
+ 
+-<feed xmlns="http://www.w3.org/2005/Atom">
++<feed xmlns="http://www.w3.org/2005/Atom" xmlns:planet='http://planet.intertwingly.net/'>
+   <entry>
+     <source>
+       <planet:name>foo</planet:name>
+     </source>
+   </entry>
+-  <planet:source xmlns:planet='http://planet.intertwingly.net/'>
++  <planet:source>
+     <planet:name>foo</planet:name>
+   </planet:source>
+ </feed>

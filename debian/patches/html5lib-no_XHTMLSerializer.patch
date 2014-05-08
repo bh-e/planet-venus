@@ -1,0 +1,87 @@
+Description: Adjust to html5lib 0.999
+ There are several changes in html5lib (and feedparser) that need some
+ adaptations (tested to comply with the test suite mainly).
+Author: Olivier Berger <obergix@debian.org>
+
+diff --git a/planet/scrub.py b/planet/scrub.py
+index fef5c22..bd707f1 100644
+--- a/planet/scrub.py
++++ b/planet/scrub.py
+@@ -128,24 +128,23 @@ def scrub(feed_uri, data):
+                 node['value'] = feedparser._resolveRelativeURIs(
+                     node.value, node.base, 'utf-8', node.type)
+ 
+-            # Run this through HTML5's sanitizer
+-            doc = None
+-            if 'xhtml' in node['type']:
+-              try:
+-                from xml.dom import minidom
+-                doc = minidom.parseString(node['value'])
+-              except:
+-                node['type']='text/html'
+-
+-            if not doc:
+-              from html5lib import html5parser, treebuilders
+-              p=html5parser.HTMLParser(tree=treebuilders.getTreeBuilder('dom'))
+-              doc = p.parseFragment(node['value'], encoding='utf-8')
+-
+-            from html5lib import treewalkers, serializer
+-            from html5lib.filters import sanitizer
+-            walker = sanitizer.Filter(treewalkers.getTreeWalker('dom')(doc))
+-            xhtml = serializer.XHTMLSerializer(inject_meta_charset = False)
+-            tree = xhtml.serialize(walker, encoding='utf-8')
+-
+-            node['value'] = ''.join([str(token) for token in tree])
++            if node['value']:
++                # Run this through HTML5's sanitizer
++                doc = None
++                if 'xhtml' in node['type']:
++                    try:
++                        from xml.dom import minidom
++                        doc = minidom.parseString(node['value'])
++                    except:
++                        node['type']='text/html'
++
++                if not doc:
++                    from html5lib import html5parser, treebuilders, sanitizer
++                    p=html5parser.HTMLParser(tree=treebuilders.getTreeBuilder('dom'), tokenizer=sanitizer.HTMLSanitizer)
++                    doc = p.parseFragment(node['value'], encoding='utf-8')
++
++                from html5lib import treewalkers, serializer
++                walker = treewalkers.getTreeWalker('dom')(doc)
++                xhtml = serializer.HTMLSerializer(inject_meta_charset = False)
++                tree = xhtml.serialize(walker, encoding='utf-8')
++                node['value'] = ''.join([str(token) for token in tree])
+--- a/planet/reconstitute.py
++++ b/planet/reconstitute.py
+@@ -16,8 +16,7 @@ Todo:
+ import re, time, sgmllib
+ from xml.sax.saxutils import escape
+ from xml.dom import minidom, Node
+-from html5lib import html5parser
+-from html5lib.treebuilders import dom
++from html5lib import html5parser, treebuilders
+ import planet, config
+ 
+ try:
+@@ -168,7 +171,7 @@ def content(xentry, name, detail, bozo):
+             bozo=1
+ 
+     if detail.type.find('xhtml')<0 or bozo:
+-        parser = html5parser.HTMLParser(tree=dom.TreeBuilder)
++        parser = html5parser.HTMLParser(tree=treebuilders.getTreeBuilder('dom'))
+         html = parser.parse(xdiv % detail.value, encoding="utf-8")
+         for body in html.documentElement.childNodes:
+             if body.nodeType != Node.ELEMENT_NODE: continue
+diff --git a/filters/html2xhtml.plugin b/filters/html2xhtml.plugin
+index 3ab7a8c..3840c43 100644
+--- a/filters/html2xhtml.plugin
++++ b/filters/html2xhtml.plugin
+@@ -1,6 +1,6 @@
+ import sys
+ import html5lib
+-tree=html5lib.treebuilders.dom.TreeBuilder
++tree=html5lib.treebuilders.getTreeBuilder('dom')
+ parser = html5lib.html5parser.HTMLParser(tree=tree)
+ document = parser.parse(sys.stdin)
+ sys.stdout.write(document.toxml("utf-8"))

@@ -1,3 +1,5 @@
+Description: Add the diveintomark theme
+
 diff -Nur planet-venus-20080213-1.orig/themes/diveintomark/config.ini planet-venus-20080213-1.orig.new/themes/diveintomark/config.ini
 --- planet-venus-20080213-1.orig/themes/diveintomark/config.ini 1970-01-01 01:00:00.000000000 +0100
 +++ planet-venus-20080213-1.orig.new/themes/diveintomark/config.ini     2008-02-18 12:44:49.000000000 +0000

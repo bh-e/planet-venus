@@ -1,0 +1,12 @@
+html5lib-no_XHTMLSerializer.patch
+summary_detail-fix.patch
+django-settings-config.patch
+processor-import.patch
+removevendordeps.patch
+fixundeclarednamespaces.patch
+datetimeintmpl.patch
+testids.patch
+updated.patch
+command-improvement.patch
+handlefetchingerror.patch
+theme-diveintomark.patch

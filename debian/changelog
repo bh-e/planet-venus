@@ -1,3 +1,10 @@
+planet-venus (0~git9de2109-1) experimental; urgency=low
+
+  * New upstream version (git snapshot).
+  * Don't force WARNING log_level (Closes: #630635).
+
+ -- Olivier Berger <obergix@debian.org>  Mon, 27 Jan 2014 16:03:32 +0100
+
 planet-venus (0~bzr116-2) UNRELEASED; urgency=low
 
   * Use canonical URIs for Vcs-* fields.

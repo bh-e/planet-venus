@@ -1,24 +1,29 @@
-diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/planet.py
---- planet-venus_0~bzr86.orig/planet.py	2008-03-20 23:39:53.000000000 +0000
-+++ planet-venus_0~bzr86.orig.new/planet.py	2008-03-21 00:03:19.000000000 +0000
-@@ -13,30 +13,90 @@
-                 "Jeff Waugh <jdub@perkypants.org>" ]
+Description: Add additional options and features
+
+diff --git a/planet.py b/planet.py
+index 26191bb..2f2e841 100755
+--- a/planet.py
++++ b/planet.py
+@@ -14,32 +14,93 @@ __authors__ = [ "Scott James Remnant <scott@netsplit.com>",
  __license__ = "Python"
  
-+import os, shutil, sys
-+from os import path
  
 -import os, sys
++import os, shutil, sys
++from os import path
++
 +DEFAULT_CONFIGURATION_FILE_NAME = "/usr/share/planet-venus/example/default.ini"
 +DEFAULT_THEME_DIRECTORY_NAME = "/usr/share/planet-venus/theme/default"
  
  if __name__ == "__main__":
-     config_file = "config.ini"
+     config_file = []
      offline = 0
      verbose = 0
 +    debug = 0
      only_if_new = 0
      expunge = 0
+     debug_splice = 0
+     no_publish = 0
  
 -    for arg in sys.argv[1:]:
 +    def display_error(message):
@@ -37,6 +42,7 @@ diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/plan
 -            print " -h, --help          Display this help message and exit"
 -            print " -n, --only-if-new   Only spider new feeds"
 -            print " -x, --expunge       Expunge old entries from cache"
+-            print " --no-publish        Do not publish feeds using PubSubHubbub"
 -            print
 +            print """Usage: planet [OPTION]... [CONFIGURATION-FILE]
 +
@@ -50,11 +56,13 @@ diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/plan
 +  -h, --help              display a short help message and exit
 +  -V, --version           display version information and exit
 +  -v, --verbose           verbose logging during update
-+  -d, --debug             debug logging during update
++  -D, --debug             debug logging during update
++  -d  --debug-splice      debug splice
 +  -o, --offline           update from the cache only
 +  -n, --only-if-new       only spider new feeds
 +  -x, --expunge           expunge old entries from cache
 +  -c, --create=DIRECTORY  create a new planet in DIRECTORY
++  --no-publish             Do not publish feeds using PubSubHubbub
 +
 +Examples:
 +
@@ -75,7 +83,7 @@ diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/plan
 +  sensible-editor planet.ini
 +
 +Report bugs using the `reportbug' command."""
-+            sys.exit(0)
+             sys.exit(0)
 +        elif arg == "-V" or arg == "--version":
 +            print """planet - Planet Venus @version@
 +
@@ -95,43 +103,40 @@ diff -Nur planet-venus_0~bzr86.orig/planet.py planet-venus_0~bzr86.orig.new/plan
 +                shutil.copy(DEFAULT_CONFIGURATION_FILE_NAME, configuration_file_name)
 +            if not path.exists(theme_directory_name):
 +                shutil.copytree(DEFAULT_THEME_DIRECTORY_NAME, theme_directory_name)
-             sys.exit(0)
          elif arg == "-v" or arg == "--verbose":
              verbose = 1
-+        elif arg == "-d" or arg == "--debug":
++        elif arg == "-D" or arg == "--debug":
 +            debug = 1
          elif arg == "-o" or arg == "--offline":
              offline = 1
          elif arg == "-n" or arg == "--only-if-new":
-@@ -44,17 +104,27 @@
-         elif arg == "-x" or arg == "--expunge":
-             expunge = 1
+@@ -51,17 +112,25 @@ if __name__ == "__main__":
+         elif arg == "--no-publish":
+             no_publish = 1
          elif arg.startswith("-"):
 -            print >>sys.stderr, "Unknown option:", arg
 -            sys.exit(1)
 +            display_error("Unknown option: %s" % arg)
          else:
-             config_file = arg
+             config_file.append(arg)
  
 +    if not config_file:
 +        display_error("No configuration file specified.")
 +
-+    if not path.exists(config_file):
-+        display_error("The configuration file does not exist: %s" % config_file)
++    for i in config_file:
++        if not path.exists(i):
++            display_error("The configuration file does not exist: %s" % i)
 +
      from planet import config
-     config.load(config_file)
+     config.load(config_file or 'config.ini')
  
 -    if verbose:
 -        import planet
 +    import planet
-+
 +    if debug:
          planet.getLogger('DEBUG',config.log_format())
 +    elif verbose:
 +        planet.getLogger('INFO',config.log_format())
-+    else:
-+        planet.getLogger('WARNING',config.log_format())
  
      if not offline:
          from planet import spider
