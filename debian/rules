@@ -7,7 +7,7 @@
 # permitted in any medium without royalty provided the copyright notice and this
 # notice are preserved.
 
-export DH_VERBOSE=1
+#export DH_VERBOSE=1
 
 %:
 	dh $@ --with python2
