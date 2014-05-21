@@ -32,8 +32,10 @@ override_dh_fixperms:
 	dh_fixperms
 	find debian/planet-venus/usr/share/pyshared/planet/ -type f -name '*.py' -print0 2>/dev/null | xargs -0r chmod 644
 
+# Tests disabled at build time, cause they're failing. But pass them with autopkgtest (see debian/tests/control)
 # override_dh_auto_test:
-# 	python runtests.py -v
+# 	#python runtests.py -v
+#	python -m unittest discover -v -s . tests -t . -p 'test_*.py'
 # 	# Re-run to for verifying that individually, 'test_foaf_document' passes (has produced "RedlandError: 'XML parser error: xmlParseCharRef: invalid xmlChar value 12'" through runtests.py above)
 # 	python tests/test_foaf.py
 
