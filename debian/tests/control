@@ -1,1 +1,3 @@
 Tests: runtests foaftest
+Depends: @, python-genshi, python-django
+Restrictions: allow-stderr, build-needed
