@@ -1,3 +1,9 @@
+planet-venus (0~git9de2109-3) unstable; urgency=low
+
+  * Improve autopkgtest configuration.
+
+ -- Olivier Berger <obergix@debian.org>  Wed, 21 May 2014 15:37:34 +0200
+
 planet-venus (0~git9de2109-2) unstable; urgency=low
 
   * Almost identical to 0~git9de2109-1, but for unstable (Closes: #747381)
