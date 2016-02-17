@@ -5,7 +5,7 @@ Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.de
 Standards-Version: 3.9.5
 Uploaders: Olivier Berger <obergix@debian.org>
 Build-Depends: debhelper (>= 7.2.11)
-Build-Depends-Indep: help2man, python-support (>= 0.6.4), python
+Build-Depends-Indep: help2man, dh-python, python
 Homepage: http://www.intertwingly.net/code/venus/
 Vcs-Svn: svn://anonscm.debian.org/python-apps/packages/planet-venus/trunk/
 Vcs-Browser: http://anonscm.debian.org/viewvc/python-apps/packages/planet-venus/trunk/
