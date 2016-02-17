@@ -1,3 +1,12 @@
+planet-venus (0~git9de2109-4) UNRELEASED; urgency=medium
+
+  * Team upload.
+  * d/tests/control: Add python-libxslt1 to the test dependencies.
+  * d/tests/runtests: Restore the old way of running the unittests, which
+    will still fail, but not block autopkgtests.
+
+ -- Barry Warsaw <barry@debian.org>  Wed, 17 Feb 2016 11:13:10 -0500
+
 planet-venus (0~git9de2109-3.1) unstable; urgency=medium
 
   * Non-maintainer upload.
