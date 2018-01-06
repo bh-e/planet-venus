@@ -1,3 +1,12 @@
+planet-venus (0~git9de2109-4.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Incorporate a patch along with html5lib-no_XHTMLSerializer.patch,
+     for fixing python-html5lib version bug. ( Closes: #845987)
+  * Switch to compact version 9 
+
+ -- Abhijith PA <abhijith@Adebian>  Sat, 06 Jan 2018 11:52:51 +0530
+
 planet-venus (0~git9de2109-4) unstable; urgency=medium
 
   * Team upload.
