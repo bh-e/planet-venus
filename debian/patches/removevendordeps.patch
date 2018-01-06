@@ -2,10 +2,9 @@ Description: remove dependencies provided in vendor
  Several libs are packaged in Debian, so don't ship them
 Author: Olivier Berger <obergix@debian.org>
 
-diff --git a/planet/vendor/compat_logging/__init__.py b/planet/vendor/compat_logging/__init__.py
-deleted file mode 100644
-index 3b83493..0000000
---- a/planet/vendor/compat_logging/__init__.py
+Index: planet-venus-0~git9de2109/planet/vendor/compat_logging/__init__.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/compat_logging/__init__.py
 +++ /dev/null
 @@ -1,1196 +0,0 @@
 -# Copyright 2001-2002 by Vinay Sajip. All Rights Reserved.
@@ -1204,10 +1203,9 @@ index 3b83493..0000000
 -    for h in _handlers.keys():
 -        h.flush()
 -        h.close()
-diff --git a/planet/vendor/compat_logging/config.py b/planet/vendor/compat_logging/config.py
-deleted file mode 100644
-index d4d08f0..0000000
---- a/planet/vendor/compat_logging/config.py
+Index: planet-venus-0~git9de2109/planet/vendor/compat_logging/config.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/compat_logging/config.py
 +++ /dev/null
 @@ -1,299 +0,0 @@
 -# Copyright 2001-2002 by Vinay Sajip. All Rights Reserved.
@@ -1509,10 +1507,9 @@ index d4d08f0..0000000
 -        _listener.abort = 1
 -        _listener = None
 -        logging._releaseLock()
-diff --git a/planet/vendor/compat_logging/handlers.py b/planet/vendor/compat_logging/handlers.py
-deleted file mode 100644
-index 26ca8ad..0000000
---- a/planet/vendor/compat_logging/handlers.py
+Index: planet-venus-0~git9de2109/planet/vendor/compat_logging/handlers.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/compat_logging/handlers.py
 +++ /dev/null
 @@ -1,728 +0,0 @@
 -# Copyright 2001-2002 by Vinay Sajip. All Rights Reserved.
@@ -2243,10 +2240,9 @@ index 26ca8ad..0000000
 -        self.flush()
 -        self.target = None
 -        self.buffer = []
-diff --git a/planet/vendor/feedparser.py b/planet/vendor/feedparser.py
-deleted file mode 100755
-index 76167ce..0000000
---- a/planet/vendor/feedparser.py
+Index: planet-venus-0~git9de2109/planet/vendor/feedparser.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/feedparser.py
 +++ /dev/null
 @@ -1,3689 +0,0 @@
 -#!/usr/bin/env python
@@ -5938,10 +5934,9 @@ index 76167ce..0000000
 -    for url in urls:
 -        results = parse(url, etag=options.etag, modified=options.modified, agent=options.agent, referrer=options.referrer)
 -        serializer(results).write(sys.stdout)
-diff --git a/planet/vendor/html5lib/__init__.py b/planet/vendor/html5lib/__init__.py
-deleted file mode 100644
-index ae64f14..0000000
---- a/planet/vendor/html5lib/__init__.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/__init__.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/__init__.py
 +++ /dev/null
 @@ -1,17 +0,0 @@
 -""" 
@@ -5961,10 +5956,9 @@ index ae64f14..0000000
 -from treebuilders import getTreeBuilder
 -from treewalkers import getTreeWalker
 -from serializer import serialize
-diff --git a/planet/vendor/html5lib/constants.py b/planet/vendor/html5lib/constants.py
-deleted file mode 100644
-index f9521c8..0000000
---- a/planet/vendor/html5lib/constants.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/constants.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/constants.py
 +++ /dev/null
 @@ -1,1171 +0,0 @@
 -import string, gettext
@@ -7138,13 +7132,9 @@ index f9521c8..0000000
 -
 -class ReparseException(Exception):
 -    pass
-diff --git a/planet/vendor/html5lib/filters/__init__.py b/planet/vendor/html5lib/filters/__init__.py
-deleted file mode 100644
-index e69de29..0000000
-diff --git a/planet/vendor/html5lib/filters/_base.py b/planet/vendor/html5lib/filters/_base.py
-deleted file mode 100644
-index bca94ad..0000000
---- a/planet/vendor/html5lib/filters/_base.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/filters/_base.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/filters/_base.py
 +++ /dev/null
 @@ -1,10 +0,0 @@
 -
@@ -7157,10 +7147,9 @@ index bca94ad..0000000
 -
 -    def __getattr__(self, name):
 -        return getattr(self.source, name)
-diff --git a/planet/vendor/html5lib/filters/formfiller.py b/planet/vendor/html5lib/filters/formfiller.py
-deleted file mode 100644
-index 9400171..0000000
---- a/planet/vendor/html5lib/filters/formfiller.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/filters/formfiller.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/filters/formfiller.py
 +++ /dev/null
 @@ -1,127 +0,0 @@
 -#
@@ -7290,10 +7279,9 @@ index 9400171..0000000
 -                continue # ignore token
 -
 -            yield token
-diff --git a/planet/vendor/html5lib/filters/inject_meta_charset.py b/planet/vendor/html5lib/filters/inject_meta_charset.py
-deleted file mode 100644
-index 35a2d95..0000000
---- a/planet/vendor/html5lib/filters/inject_meta_charset.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/filters/inject_meta_charset.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/filters/inject_meta_charset.py
 +++ /dev/null
 @@ -1,63 +0,0 @@
 -import _base
@@ -7359,10 +7347,9 @@ index 35a2d95..0000000
 -                pending.append(token)
 -            else:
 -                yield token
-diff --git a/planet/vendor/html5lib/filters/lint.py b/planet/vendor/html5lib/filters/lint.py
-deleted file mode 100644
-index ea5c619..0000000
---- a/planet/vendor/html5lib/filters/lint.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/filters/lint.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/filters/lint.py
 +++ /dev/null
 @@ -1,88 +0,0 @@
 -from gettext import gettext
@@ -7453,10 +7440,9 @@ index ea5c619..0000000
 -                raise LintError(_(u"Unknown token type: %s") % type)
 -
 -            yield token
-diff --git a/planet/vendor/html5lib/filters/optionaltags.py b/planet/vendor/html5lib/filters/optionaltags.py
-deleted file mode 100644
-index a77aa72..0000000
---- a/planet/vendor/html5lib/filters/optionaltags.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/filters/optionaltags.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/filters/optionaltags.py
 +++ /dev/null
 @@ -1,202 +0,0 @@
 -import _base
@@ -7661,10 +7647,9 @@ index a77aa72..0000000
 -            else:
 -                return type == "EndTag" or type is None
 -        return False
-diff --git a/planet/vendor/html5lib/filters/sanitizer.py b/planet/vendor/html5lib/filters/sanitizer.py
-deleted file mode 100644
-index 0023527..0000000
---- a/planet/vendor/html5lib/filters/sanitizer.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/filters/sanitizer.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/filters/sanitizer.py
 +++ /dev/null
 @@ -1,8 +0,0 @@
 -import _base
@@ -7675,10 +7660,9 @@ index 0023527..0000000
 -        for token in _base.Filter.__iter__(self):
 -            token = self.sanitize_token(token)
 -            if token: yield token
-diff --git a/planet/vendor/html5lib/filters/whitespace.py b/planet/vendor/html5lib/filters/whitespace.py
-deleted file mode 100644
-index 74d6f4d..0000000
---- a/planet/vendor/html5lib/filters/whitespace.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/filters/whitespace.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/filters/whitespace.py
 +++ /dev/null
 @@ -1,41 +0,0 @@
 -try:
@@ -7722,10 +7706,9 @@ index 74d6f4d..0000000
 -def collapse_spaces(text):
 -    return SPACES_REGEX.sub(' ', text)
 -
-diff --git a/planet/vendor/html5lib/html5parser.py b/planet/vendor/html5lib/html5parser.py
-deleted file mode 100644
-index 5ff742a..0000000
---- a/planet/vendor/html5lib/html5parser.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/html5parser.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/html5parser.py
 +++ /dev/null
 @@ -1,2637 +0,0 @@
 -try:
@@ -10365,10 +10348,9 @@ index 5ff742a..0000000
 -class ParseError(Exception):
 -    """Error in parsed document"""
 -    pass
-diff --git a/planet/vendor/html5lib/ihatexml.py b/planet/vendor/html5lib/ihatexml.py
-deleted file mode 100644
-index dd78563..0000000
---- a/planet/vendor/html5lib/ihatexml.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/ihatexml.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/ihatexml.py
 +++ /dev/null
 @@ -1,177 +0,0 @@
 -import re
@@ -10548,10 +10530,9 @@ index dd78563..0000000
 -
 -    def unescapeChar(self, charcode):
 -        return unichr(int(charcode[1:], 16))
-diff --git a/planet/vendor/html5lib/inputstream.py b/planet/vendor/html5lib/inputstream.py
-deleted file mode 100644
-index 46f46b1..0000000
---- a/planet/vendor/html5lib/inputstream.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/inputstream.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/inputstream.py
 +++ /dev/null
 @@ -1,789 +0,0 @@
 -import codecs
@@ -11343,10 +11324,9 @@ index 46f46b1..0000000
 -        return encodings.get(canonicalName, None)
 -    else:
 -        return None
-diff --git a/planet/vendor/html5lib/sanitizer.py b/planet/vendor/html5lib/sanitizer.py
-deleted file mode 100644
-index 05face9..0000000
---- a/planet/vendor/html5lib/sanitizer.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/sanitizer.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/sanitizer.py
 +++ /dev/null
 @@ -1,258 +0,0 @@
 -import re
@@ -11607,10 +11587,9 @@ index 05face9..0000000
 -            token = self.sanitize_token(token)
 -            if token:
 -                yield token
-diff --git a/planet/vendor/html5lib/serializer/__init__.py b/planet/vendor/html5lib/serializer/__init__.py
-deleted file mode 100644
-index 1b74665..0000000
---- a/planet/vendor/html5lib/serializer/__init__.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/serializer/__init__.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/serializer/__init__.py
 +++ /dev/null
 @@ -1,17 +0,0 @@
 -
@@ -11630,10 +11609,9 @@ index 1b74665..0000000
 -    else:
 -        raise ValueError, "type must be either html or xhtml"
 -    return s.render(walker(input), encoding)
-diff --git a/planet/vendor/html5lib/serializer/htmlserializer.py b/planet/vendor/html5lib/serializer/htmlserializer.py
-deleted file mode 100644
-index 45f1d06..0000000
---- a/planet/vendor/html5lib/serializer/htmlserializer.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/serializer/htmlserializer.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/serializer/htmlserializer.py
 +++ /dev/null
 @@ -1,266 +0,0 @@
 -try:
@@ -11902,10 +11880,9 @@ index 45f1d06..0000000
 -def SerializeError(Exception):
 -    """Error in serialized tree"""
 -    pass
-diff --git a/planet/vendor/html5lib/serializer/xhtmlserializer.py b/planet/vendor/html5lib/serializer/xhtmlserializer.py
-deleted file mode 100644
-index 7fdce47..0000000
---- a/planet/vendor/html5lib/serializer/xhtmlserializer.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/serializer/xhtmlserializer.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/serializer/xhtmlserializer.py
 +++ /dev/null
 @@ -1,9 +0,0 @@
 -from htmlserializer import HTMLSerializer
@@ -11917,10 +11894,9 @@ index 7fdce47..0000000
 -    escape_lt_in_attrs = True
 -    omit_optional_tags = False
 -    escape_rcdata = True
-diff --git a/planet/vendor/html5lib/tokenizer.py b/planet/vendor/html5lib/tokenizer.py
-deleted file mode 100644
-index d7c4b5f..0000000
---- a/planet/vendor/html5lib/tokenizer.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/tokenizer.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/tokenizer.py
 +++ /dev/null
 @@ -1,1586 +0,0 @@
 -try:
@@ -13509,10 +13485,9 @@ index d7c4b5f..0000000
 -        else:
 -            pass
 -        return True
-diff --git a/planet/vendor/html5lib/treebuilders/__init__.py b/planet/vendor/html5lib/treebuilders/__init__.py
-deleted file mode 100755
-index 13278de..0000000
---- a/planet/vendor/html5lib/treebuilders/__init__.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treebuilders/__init__.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treebuilders/__init__.py
 +++ /dev/null
 @@ -1,94 +0,0 @@
 -"""A collection of modules for building different kinds of tree from
@@ -13609,10 +13584,9 @@ index 13278de..0000000
 -        else:
 -            raise ValueError("""Unrecognised treebuilder "%s" """%treeType)
 -    return treeBuilderCache.get(treeType)
-diff --git a/planet/vendor/html5lib/treebuilders/_base.py b/planet/vendor/html5lib/treebuilders/_base.py
-deleted file mode 100755
-index 6ea5843..0000000
---- a/planet/vendor/html5lib/treebuilders/_base.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treebuilders/_base.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treebuilders/_base.py
 +++ /dev/null
 @@ -1,345 +0,0 @@
 -from html5lib.constants import scopingElements, tableInsertModeElements, namespaces
@@ -13960,10 +13934,9 @@ index 6ea5843..0000000
 -        """Serialize the subtree of node in the format required by unit tests
 -        node - the node from which to start serializing"""
 -        raise NotImplementedError
-diff --git a/planet/vendor/html5lib/treebuilders/dom.py b/planet/vendor/html5lib/treebuilders/dom.py
-deleted file mode 100644
-index c094e1f..0000000
---- a/planet/vendor/html5lib/treebuilders/dom.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treebuilders/dom.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treebuilders/dom.py
 +++ /dev/null
 @@ -1,286 +0,0 @@
 -
@@ -14252,10 +14225,9 @@ index c094e1f..0000000
 -# classes/functions from this module
 -for key, value in getDomModule(minidom).__dict__.items():
 -	globals()[key] = value
-diff --git a/planet/vendor/html5lib/treebuilders/etree.py b/planet/vendor/html5lib/treebuilders/etree.py
-deleted file mode 100755
-index 62918f8..0000000
---- a/planet/vendor/html5lib/treebuilders/etree.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treebuilders/etree.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treebuilders/etree.py
 +++ /dev/null
 @@ -1,333 +0,0 @@
 -import new
@@ -14591,10 +14563,9 @@ index 62918f8..0000000
 -            return _base.TreeBuilder.getFragment(self)._element
 -        
 -    return locals()
-diff --git a/planet/vendor/html5lib/treebuilders/etree_lxml.py b/planet/vendor/html5lib/treebuilders/etree_lxml.py
-deleted file mode 100644
-index 80a4005..0000000
---- a/planet/vendor/html5lib/treebuilders/etree_lxml.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treebuilders/etree_lxml.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treebuilders/etree_lxml.py
 +++ /dev/null
 @@ -1,335 +0,0 @@
 -import new
@@ -14932,10 +14903,9 @@ index 80a4005..0000000
 -    
 -        #Reset to the default insert comment function
 -        self.insertComment = super(TreeBuilder, self).insertComment
-diff --git a/planet/vendor/html5lib/treebuilders/simpletree.py b/planet/vendor/html5lib/treebuilders/simpletree.py
-deleted file mode 100755
-index ff6bfe4..0000000
---- a/planet/vendor/html5lib/treebuilders/simpletree.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treebuilders/simpletree.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treebuilders/simpletree.py
 +++ /dev/null
 @@ -1,248 +0,0 @@
 -import _base
@@ -15186,10 +15156,9 @@ index ff6bfe4..0000000
 -    
 -    def testSerializer(self, node):
 -        return node.printTree()
-diff --git a/planet/vendor/html5lib/treebuilders/soup.py b/planet/vendor/html5lib/treebuilders/soup.py
-deleted file mode 100644
-index bca2baf..0000000
---- a/planet/vendor/html5lib/treebuilders/soup.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treebuilders/soup.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treebuilders/soup.py
 +++ /dev/null
 @@ -1,228 +0,0 @@
 -import warnings
@@ -15420,10 +15389,9 @@ index bca2baf..0000000
 -    serializeElement(element, 0)
 -
 -    return "\n".join(rv)
-diff --git a/planet/vendor/html5lib/treewalkers/__init__.py b/planet/vendor/html5lib/treewalkers/__init__.py
-deleted file mode 100644
-index 3a606a8..0000000
---- a/planet/vendor/html5lib/treewalkers/__init__.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/__init__.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/__init__.py
 +++ /dev/null
 @@ -1,52 +0,0 @@
 -"""A collection of modules for iterating through different kinds of
@@ -15478,10 +15446,9 @@ index 3a606a8..0000000
 -            # XXX: NEVER cache here, caching is done in the etree submodule
 -            return etree.getETreeModule(implementation, **kwargs).TreeWalker
 -    return treeWalkerCache.get(treeType)
-diff --git a/planet/vendor/html5lib/treewalkers/_base.py b/planet/vendor/html5lib/treewalkers/_base.py
-deleted file mode 100644
-index 4128be1..0000000
---- a/planet/vendor/html5lib/treewalkers/_base.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/_base.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/_base.py
 +++ /dev/null
 @@ -1,172 +0,0 @@
 -import gettext
@@ -15656,10 +15623,9 @@ index 4128be1..0000000
 -                        break
 -                    else:
 -                        currentNode = self.getParentNode(currentNode)
-diff --git a/planet/vendor/html5lib/treewalkers/dom.py b/planet/vendor/html5lib/treewalkers/dom.py
-deleted file mode 100644
-index 0adc77f..0000000
---- a/planet/vendor/html5lib/treewalkers/dom.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/dom.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/dom.py
 +++ /dev/null
 @@ -1,37 +0,0 @@
 -from xml.dom import Node
@@ -15699,10 +15665,9 @@ index 0adc77f..0000000
 -
 -    def getParentNode(self, node):
 -        return node.parentNode
-diff --git a/planet/vendor/html5lib/treewalkers/etree.py b/planet/vendor/html5lib/treewalkers/etree.py
-deleted file mode 100644
-index 739d307..0000000
---- a/planet/vendor/html5lib/treewalkers/etree.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/etree.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/etree.py
 +++ /dev/null
 @@ -1,130 +0,0 @@
 -import gettext
@@ -15835,10 +15800,9 @@ index 739d307..0000000
 -                    return parent, list(parents[-1]).index(parent), parents, None
 -
 -    return locals()
-diff --git a/planet/vendor/html5lib/treewalkers/genshistream.py b/planet/vendor/html5lib/treewalkers/genshistream.py
-deleted file mode 100644
-index ef71a83..0000000
---- a/planet/vendor/html5lib/treewalkers/genshistream.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/genshistream.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/genshistream.py
 +++ /dev/null
 @@ -1,70 +0,0 @@
 -from genshi.core import START, END, XML_NAMESPACE, DOCTYPE, TEXT
@@ -15911,10 +15875,9 @@ index ef71a83..0000000
 -
 -        else:
 -            yield self.unknown(kind)
-diff --git a/planet/vendor/html5lib/treewalkers/lxmletree.py b/planet/vendor/html5lib/treewalkers/lxmletree.py
-deleted file mode 100644
-index 2c38aff..0000000
---- a/planet/vendor/html5lib/treewalkers/lxmletree.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/lxmletree.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/lxmletree.py
 +++ /dev/null
 @@ -1,181 +0,0 @@
 -from lxml import etree
@@ -16098,10 +16061,9 @@ index 2c38aff..0000000
 -            # else: fallback to "normal" processing
 -
 -        return node.getparent()
-diff --git a/planet/vendor/html5lib/treewalkers/pulldom.py b/planet/vendor/html5lib/treewalkers/pulldom.py
-deleted file mode 100644
-index 7354a0e..0000000
---- a/planet/vendor/html5lib/treewalkers/pulldom.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/pulldom.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/pulldom.py
 +++ /dev/null
 @@ -1,56 +0,0 @@
 -from xml.dom.pulldom import START_ELEMENT, END_ELEMENT, \
@@ -16160,10 +16122,9 @@ index 7354a0e..0000000
 -
 -        else:
 -            yield self.unknown(type)
-diff --git a/planet/vendor/html5lib/treewalkers/simpletree.py b/planet/vendor/html5lib/treewalkers/simpletree.py
-deleted file mode 100644
-index 42be2a2..0000000
---- a/planet/vendor/html5lib/treewalkers/simpletree.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/simpletree.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/simpletree.py
 +++ /dev/null
 @@ -1,72 +0,0 @@
 -import gettext
@@ -16238,10 +16199,9 @@ index 42be2a2..0000000
 -        else:
 -            # HACK: We could return ``parent`` but None will stop the algorithm the same way
 -            return None
-diff --git a/planet/vendor/html5lib/treewalkers/soup.py b/planet/vendor/html5lib/treewalkers/soup.py
-deleted file mode 100644
-index fca65ec..0000000
---- a/planet/vendor/html5lib/treewalkers/soup.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/treewalkers/soup.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/treewalkers/soup.py
 +++ /dev/null
 @@ -1,60 +0,0 @@
 -import re
@@ -16304,10 +16264,9 @@ index fca65ec..0000000
 -
 -    def getParentNode(self, node):
 -        return node.parent
-diff --git a/planet/vendor/html5lib/utils.py b/planet/vendor/html5lib/utils.py
-deleted file mode 100644
-index d53f678..0000000
---- a/planet/vendor/html5lib/utils.py
+Index: planet-venus-0~git9de2109/planet/vendor/html5lib/utils.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/html5lib/utils.py
 +++ /dev/null
 @@ -1,175 +0,0 @@
 -try:
@@ -16485,10 +16444,9 @@ index d53f678..0000000
 -    char_val = (0x10000 + (ord(data[0]) - 0xD800) * 0x400 + 
 -                (ord(data[1]) - 0xDC00))
 -    return char_val
-diff --git a/planet/vendor/htmltmpl.py b/planet/vendor/htmltmpl.py
-deleted file mode 100644
-index d4fce5f..0000000
---- a/planet/vendor/htmltmpl.py
+Index: planet-venus-0~git9de2109/planet/vendor/htmltmpl.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/htmltmpl.py
 +++ /dev/null
 @@ -1,1421 +0,0 @@
 -
@@ -17912,10 +17870,9 @@ index d4fce5f..0000000
 -        """
 -        Exception.__init__(self, template)
 -
-diff --git a/planet/vendor/httplib2/__init__.py b/planet/vendor/httplib2/__init__.py
-deleted file mode 100644
-index ee65304..0000000
---- a/planet/vendor/httplib2/__init__.py
+Index: planet-venus-0~git9de2109/planet/vendor/httplib2/__init__.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/httplib2/__init__.py
 +++ /dev/null
 @@ -1,1175 +0,0 @@
 -from __future__ import generators
@@ -19093,10 +19050,9 @@ index ee65304..0000000
 -            return self 
 -        else:  
 -            raise AttributeError, name 
-diff --git a/planet/vendor/httplib2/iri2uri.py b/planet/vendor/httplib2/iri2uri.py
-deleted file mode 100644
-index 70667ed..0000000
---- a/planet/vendor/httplib2/iri2uri.py
+Index: planet-venus-0~git9de2109/planet/vendor/httplib2/iri2uri.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/httplib2/iri2uri.py
 +++ /dev/null
 @@ -1,110 +0,0 @@
 -"""
@@ -19209,10 +19165,9 @@ index 70667ed..0000000
 -    unittest.main()
 -
 -    
-diff --git a/planet/vendor/portalocker.py b/planet/vendor/portalocker.py
-deleted file mode 100644
-index 12592a3..0000000
---- a/planet/vendor/portalocker.py
+Index: planet-venus-0~git9de2109/planet/vendor/portalocker.py
+===================================================================
+--- planet-venus-0~git9de2109.orig/planet/vendor/portalocker.py
 +++ /dev/null
 @@ -1,93 +0,0 @@
 -# portalocker.py - Cross-platform (posix/nt) API for flock-style file locking.
